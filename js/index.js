@@ -1,8 +1,7 @@
-const game = {};
+const game = getNewGameData();
 
 function initialize() {
 	// TODO: add saving/loading
-	game = getNewGameData();
 }
 
 initialize();

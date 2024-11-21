@@ -15,17 +15,23 @@ function doLoopStep() {
 function updateVariables() {
 	const tickspeed = new Decimal(1).div(TICK_INTERVAL);
 	if (game.generators.particle.pressed) {
-		game.currencies.particles.add(tickspeed.mul(new Decimal("1")));
-		game.currencies.electricity.sub(tickspeed.mul(new Decimal("1")));
+		game.currencies.particles = game.currencies.particles.add(
+			tickspeed.mul(new Decimal("1"))
+		);
+		game.currencies.electricity = game.currencies.electricity.sub(
+			tickspeed.mul(new Decimal("1"))
+		);
 	} else {
-		game.currencies.electricity.add(tickspeed.mul(new Decimal("1")));
+		game.currencies.electricity = game.currencies.electricity.add(
+			tickspeed.mul(new Decimal("1"))
+		);
 	}
 }
 
 function updateHTML() {
-	$("#currency--electricity").text(games.currencies.electricity.toString());
-	$("#currency--money").text(games.currencies.money.toString());
-	$("#currency--particles").text(games.currencies.particles.toString());
+	$("#currency--electricity").text(game.currencies.electricity.toString());
+	$("#currency--money").text(game.currencies.money.toString());
+	$("#currency--particles").text(game.currencies.particles.toString());
 }
 
 function setParticleButtonState(state) {
