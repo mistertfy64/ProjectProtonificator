@@ -34,9 +34,9 @@ function updateVariables(deltaTime) {
 }
 
 function updateHTML() {
-	$("#currency--electricity").text(game.currencies.electricity.toString());
-	$("#currency--money").text(game.currencies.money.toString());
-	$("#currency--particles").text(game.currencies.particles.toString());
+	$("#currency--electricity").text(formatNumber(game.currencies.electricity));
+	$("#currency--money").text(formatNumber(game.currencies.money));
+	$("#currency--particles").text(formatNumber(game.currencies.particles));
 }
 
 function setParticleButtonState(state) {
