@@ -21,7 +21,7 @@ function formatNumber(x) {
 	}
 	if (x.gte(LIMIT)) {
 		// TODO: Make this better.
-		return x.toPrecision(3);
+		return x.toPrecision(4);
 	}
 
 	const powerToDivideBy = new Decimal(10).pow(
