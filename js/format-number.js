@@ -2,6 +2,8 @@ const SUFFIXES = ["", "k", "M", "B", "T", "q", "Q", "s", "S", "O", "N"]; // and 
 
 /** This is when to stop using suffixes and start using scientific notation instead. */
 const LIMIT = new Decimal("1e33");
+/** Here for brevity. */
+const ZERO = new Decimal("0");
 
 /**
  * Formats the number into something more human-readable.
@@ -14,8 +16,8 @@ function formatNumber(x) {
 	if (logarithm.lt(new Decimal("0"))) {
 		return x.toPrecision(3);
 	}
-	if (x.eq(new Decimal("0"))) {
-		return new Decimal("0").toPrecision(3);
+	if (x.eq(ZERO)) {
+		return ZERO.toPrecision(3);
 	}
 	if (x.gte(LIMIT)) {
 		// TODO: Make this better.
