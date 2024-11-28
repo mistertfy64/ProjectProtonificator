@@ -18,16 +18,28 @@
   Money: <span id="currency--money">0</span> /
   Particles: <span id="currency--particles">0</span>
   <br>
-  <button id="generator--particles">
-    Generate Particles
-  </button>
-  <button id="generator--money">
-    Sell Particles for Money
-  </button>
+  <button onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
+  <button onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
+  <button onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
+  <br>
+  <!-- Generators -->
+  <div id="generators">
+    <button id="generator--particles">
+      Generate Particles
+    </button>
+    <button id="generator--money">
+      Sell Particles for Money
+    </button>
+  </div>
+  <!-- Upgrades -->
+  <div id="upgrades">Upgrades</div>
+  <!-- Settings -->
+  <div id="settings">Settings</div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="./js/lib/break_eternity.js"></script>
   <script src="./js/defaults.js"></script>
   <script src="./js/format-number.js"></script>
+  <script src="./js/screens.js"></script>
   <script src="./js/game.js"></script>
   <script src="./js/index.js"></script>
 </body>
