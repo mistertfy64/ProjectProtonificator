@@ -8,7 +8,9 @@ function getNewGameData() {
 		generators: {
 			particle: {
 				pressed: false,
-				remaining: new Decimal(100),
+			},
+			money: {
+				pressed: false,
 			},
 		},
 	};

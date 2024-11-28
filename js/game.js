@@ -19,6 +19,7 @@ function doLoopStep(deltaTime) {
 function updateVariables(deltaTime) {
 	const deltaTimeMultiplier = new Decimal(deltaTime).div(new Decimal(1000));
 	const tickspeed = new Decimal(1).div(TICK_INTERVAL);
+	/* Takes care of the particle generator */
 	if (game.generators.particle.pressed) {
 		game.currencies.particles = game.currencies.particles.add(
 			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
@@ -28,6 +29,15 @@ function updateVariables(deltaTime) {
 		);
 	} else {
 		game.currencies.electricity = game.currencies.electricity.add(
+			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
+		);
+	}
+	/* Takes care of the money generator */
+	if (game.generators.money.pressed) {
+		game.currencies.money = game.currencies.money.add(
+			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
+		);
+		game.currencies.particles = game.currencies.particles.sub(
 			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
 		);
 	}
@@ -41,4 +51,8 @@ function updateHTML() {
 
 function setParticleButtonState(state) {
 	game.generators.particle.pressed = state;
+}
+
+function setMoneyButtonState(state) {
+	game.generators.money.pressed = state;
 }

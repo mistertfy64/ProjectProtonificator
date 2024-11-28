@@ -21,6 +21,19 @@ function initializeEvents() {
 	$("#generator--particles").on("touchend", () => {
 		setParticleButtonState(false);
 	});
+	// ...
+	$("#generator--money").on("mousedown", () => {
+		setMoneyButtonState(true);
+	});
+	$("#generator--money").on("mouseup", () => {
+		setMoneyButtonState(false);
+	});
+	$("#generator--money").on("touchstart", () => {
+		setMoneyButtonState(true);
+	});
+	$("#generator--money").on("touchend", () => {
+		setMoneyButtonState(false);
+	});
 }
 
 initialize();
