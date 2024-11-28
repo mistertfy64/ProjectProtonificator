@@ -21,12 +21,14 @@ function updateVariables(deltaTime) {
 	const tickspeed = new Decimal(1).div(TICK_INTERVAL);
 	/* Takes care of the particle generator */
 	if (game.generators.particle.pressed) {
-		game.currencies.particles = game.currencies.particles.add(
-			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
-		);
-		game.currencies.electricity = game.currencies.electricity.sub(
-			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
-		);
+		if (game.currencies.electricity.gt(ZERO)) {
+			game.currencies.particles = game.currencies.particles.add(
+				tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
+			);
+			game.currencies.electricity = game.currencies.electricity.sub(
+				tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
+			);
+		}
 	} else {
 		game.currencies.electricity = game.currencies.electricity.add(
 			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
@@ -34,12 +36,12 @@ function updateVariables(deltaTime) {
 	}
 	/* Takes care of the money generator */
 	if (game.generators.money.pressed) {
-		game.currencies.money = game.currencies.money.add(
-			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
-		);
-		game.currencies.particles = game.currencies.particles.sub(
-			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
-		);
+		if (game.generators.money.gt(ZERO)) {
+			game.currencies.money = game.currencies.money.add(
+				game.currencies.particles
+			);
+			game.currencies.particles = ZERO;
+		}
 	}
 }
 
