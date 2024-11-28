@@ -36,7 +36,7 @@ function updateVariables(deltaTime) {
 	}
 	/* Takes care of the money generator */
 	if (game.generators.money.pressed) {
-		if (game.currencies.money.gt(ZERO)) {
+		if (game.currencies.particles.gt(ZERO)) {
 			game.currencies.money = game.currencies.money.add(
 				game.currencies.particles
 			);
