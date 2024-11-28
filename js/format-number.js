@@ -10,9 +10,13 @@ const ZERO = new Decimal("0");
  * @param x The number to format (should be of `Decimal` instance)
  */
 function formatNumber(x) {
-	const logarithm = x.log10().floor();
-
+	let negative = false;
 	// handle edge cases
+	if (x.lt(ZERO)) {
+		x = x.mul(new Decimal("-1"));
+		negative = true;
+	}
+	const logarithm = x.log10().floor();
 	if (logarithm.lt(new Decimal("0"))) {
 		return x.toPrecision(3);
 	}
@@ -29,5 +33,5 @@ function formatNumber(x) {
 	);
 	const index = logarithm.div(3).floor();
 	const digits = x.div(powerToDivideBy).toFixed(3);
-	return `${digits}${SUFFIXES[index]}`;
+	return `${negative ? "-" : ""}${digits}${SUFFIXES[index]}`;
 }
