@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet">
   <title>ProjectProtonificator</title>
 </head>
 
@@ -12,11 +16,45 @@
   <br>
   Electricity: <span id="currency--electricity">0</span> /
   Money: <span id="currency--money">0</span> /
-  Particles: <span id="currency--particles">0</span> /
-  <button onmousedown="setParticleButtonState(true)" onmouseup="setParticleButtonState(false)">Generate Particles</button>
+  Particles: <span id="currency--particles">0</span>
+  <br>
+  <button onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
+  <button onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
+  <button onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
+  <br>
+  <br>
+  <!-- Generators -->
+  <div id="generators">
+    <button id="generator--particles">
+      Generate Particles
+    </button>
+    <button id="generator--money">
+      Sell Particles for Money
+    </button>
+  </div>
+  <!-- Upgrades -->
+  <div id="upgrades">Upgrades
+    <button onclick="buyUpgrade(`particles.p1`)" id="upgrade--particles.p1">
+      Upgrade p1
+      <br>
+      Doubles particles earned from converting electricity.
+      <br>
+      Level <span id="upgrade--particles.p1__level">0</span>
+      <br>
+      Currently: x<span id="upgrade--particles.p1__effect">1</span>
+      <br>
+      Cost: <span id="upgrade--particles.p1__cost">0</span>
+    </button>
+  </div>
+  <!-- Settings -->
+  <div id="settings">Settings</div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
   <script src="./js/lib/break_eternity.js"></script>
   <script src="./js/defaults.js"></script>
+  <script src="./js/format-number.js"></script>
+  <script src="./js/screens.js"></script>
+  <script src="./js/upgrades.js"></script>
   <script src="./js/game.js"></script>
   <script src="./js/index.js"></script>
 </body>
