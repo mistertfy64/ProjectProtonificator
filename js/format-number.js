@@ -3,7 +3,6 @@ const SUFFIXES = ["", "k", "M", "B", "T", "q", "Q", "s", "S", "O", "N"]; // and 
 /** This is when to stop using suffixes and start using scientific notation instead. */
 const LIMIT = new Decimal("1e33");
 /** Here for brevity. */
-const ZERO = new Decimal("0");
 
 /**
  * Formats the number into something more human-readable.

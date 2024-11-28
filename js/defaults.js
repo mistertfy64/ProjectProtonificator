@@ -1,3 +1,5 @@
+const ZERO = new Decimal("0");
+
 function getNewGameData() {
 	const gameData = {
 		currencies: {
