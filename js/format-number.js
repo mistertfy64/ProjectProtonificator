@@ -8,6 +8,7 @@ const ZERO = new Decimal("0");
 /**
  * Formats the number into something more human-readable.
  * @param x The number to format (should be of `Decimal` instance)
+ * TODO: Fix for -1<x<0.
  */
 function formatNumber(x) {
 	let negative = false;
