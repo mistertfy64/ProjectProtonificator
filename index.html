@@ -34,13 +34,26 @@
   </div>
   <!-- Upgrades -->
   <div id="upgrades">Upgrades</div>
+  <button onclick="buyUpgrade(`particles.p1`)" id="upgrade--p1">
+    Upgrade p1
+    <br>
+    Doubles particles earned from converting electricity.
+    <br>
+    Level <span id="upgrade--p1__level">0</span>
+    <br>
+    Currently: x<span id="upgrade--p1__effect">1</span>
+    <br>
+    Cost: <span id="upgrade--p1__cost">0</span>
+  </button>
   <!-- Settings -->
   <div id="settings">Settings</div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
   <script src="./js/lib/break_eternity.js"></script>
   <script src="./js/defaults.js"></script>
   <script src="./js/format-number.js"></script>
   <script src="./js/screens.js"></script>
+  <script src="./js/upgrades.js"></script>
   <script src="./js/game.js"></script>
   <script src="./js/index.js"></script>
 </body>
