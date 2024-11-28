@@ -23,15 +23,15 @@ function updateVariables(deltaTime) {
 	if (game.generators.particle.pressed) {
 		if (game.currencies.electricity.gt(ZERO)) {
 			game.currencies.particles = game.currencies.particles.add(
-				tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
+				new Decimal("1").mul(tickspeed).mul(deltaTimeMultiplier)
 			);
 			game.currencies.electricity = game.currencies.electricity.sub(
-				tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
+				new Decimal("1").mul(tickspeed).mul(deltaTimeMultiplier)
 			);
 		}
 	} else {
 		game.currencies.electricity = game.currencies.electricity.add(
-			tickspeed.mul(new Decimal("1")).mul(deltaTimeMultiplier)
+			new Decimal("1").mul(tickspeed).mul(deltaTimeMultiplier)
 		);
 	}
 	/* Takes care of the money generator */
