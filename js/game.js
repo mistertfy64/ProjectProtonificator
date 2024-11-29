@@ -39,7 +39,13 @@ function updateVariables(deltaTime) {
 		}
 	} else {
 		game.currencies.electricity = game.currencies.electricity.add(
-			new Decimal("1").mul(tickspeed).mul(deltaTimeMultiplier)
+			new Decimal("1")
+				.mul(tickspeed)
+				.mul(deltaTimeMultiplier)
+				.mul(
+					getUpgradeData("particles.p2", game.upgrades.particles.p2)
+						.effect
+				)
 		);
 	}
 	/* Takes care of the money generator */
