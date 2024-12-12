@@ -41,9 +41,7 @@ function getUpgradeData(key, data) {
 				maximumLevel: new Decimal("99999"),
 				costs: [
 					{
-						amount: new Decimal("10").mul(
-							new Decimal("2").pow(data.level)
-						),
+						amount: new Decimal("10").pow(data.level),
 						currency: "money",
 					},
 				],
