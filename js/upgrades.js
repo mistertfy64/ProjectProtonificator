@@ -32,6 +32,21 @@ function buyUpgrade(key) {
 
 function getUpgradeData(key, data) {
 	const UPGRADES = {
+		speed: {
+			s1: {
+				maximumLevel: new Decimal("99999"),
+				costs: [
+					{
+						amount: new Decimal("10").mul(
+							new Decimal("2").pow(data.level)
+						),
+						currency: "money",
+					},
+				],
+				effect: new Decimal("1.1").pow(data.level),
+				description: `Increases generator speed by x1.1`,
+			},
+		},
 		particles: {
 			p1: {
 				maximumLevel: new Decimal("999"),

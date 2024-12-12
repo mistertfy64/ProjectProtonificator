@@ -16,6 +16,11 @@ function getNewGameData() {
 			},
 		},
 		upgrades: {
+			speed: {
+				s1: {
+					level: new Decimal(0),
+				},
+			},
 			particles: {
 				p1: {
 					level: new Decimal(0),
