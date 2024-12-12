@@ -66,7 +66,7 @@ function initializeUpgradeButtons() {
 			buttonHTML += `/`;
 			buttonHTML += `${upgradeData.maximumLevel.toString()}</span>`;
 			buttonHTML += `<br>`;
-			buttonHTML += `Currently x<span id="upgrade--${upgradeCategory}.${upgradeName}__effect">${formatNumber(
+			buttonHTML += `Currently: x<span id="upgrade--${upgradeCategory}.${upgradeName}__effect">${formatNumber(
 				upgradeData.effect
 			)}</span>`;
 			buttonHTML += `<br>`;
