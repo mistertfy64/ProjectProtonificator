@@ -9,6 +9,7 @@ body {
 button {
 	font-family: "JetBrains Mono", monospace;
 	border: 2px solid #000000;
+	margin: 2px;
 }
 
 .button--menu {
