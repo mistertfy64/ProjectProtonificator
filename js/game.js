@@ -18,7 +18,9 @@ function doLoopStep(deltaTime) {
 
 function updateVariables(deltaTime) {
 	const deltaTimeMultiplier = new Decimal(deltaTime).div(new Decimal(1000));
-	const tickspeed = new Decimal(1).div(TICK_INTERVAL);
+	const tickspeed = new Decimal(1)
+		.mul(getUpgradeData("speed.s1").effect)
+		.div(TICK_INTERVAL);
 	/* Takes care of the particle generator */
 	if (game.generators.particle.pressed) {
 		if (game.currencies.electricity.gt(ZERO)) {
@@ -26,12 +28,7 @@ function updateVariables(deltaTime) {
 				new Decimal("1")
 					.mul(tickspeed)
 					.mul(deltaTimeMultiplier)
-					.mul(
-						getUpgradeData(
-							"particles.p1",
-							game.upgrades.particles.p1
-						).effect
-					)
+					.mul(getUpgradeData("particles.p1").effect)
 			);
 			game.currencies.electricity = game.currencies.electricity.sub(
 				new Decimal("1").mul(tickspeed).mul(deltaTimeMultiplier)
@@ -42,10 +39,7 @@ function updateVariables(deltaTime) {
 			new Decimal("1")
 				.mul(tickspeed)
 				.mul(deltaTimeMultiplier)
-				.mul(
-					getUpgradeData("particles.p2", game.upgrades.particles.p2)
-						.effect
-				)
+				.mul(getUpgradeData("particles.p2").effect)
 		);
 	}
 	/* Takes care of the money generator */
