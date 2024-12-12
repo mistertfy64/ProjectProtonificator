@@ -31,15 +31,6 @@ function getNewGameData() {
 				p3: {
 					level: new Decimal(0),
 				},
-				p4: {
-					level: new Decimal(0),
-				},
-				p5: {
-					level: new Decimal(0),
-				},
-				p6: {
-					level: new Decimal(0),
-				},
 			},
 		},
 	};
