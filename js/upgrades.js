@@ -17,7 +17,7 @@ function buyUpgrade(key) {
 	$(`#upgrade--${jQueryKey}__level`).text(
 		playerUpgradeData.level.toString() +
 			"/" +
-			upgradeData.maximumLevel.toString() ?? "inf"
+			upgradeData?.maximumLevel.toString() ?? "inf"
 	);
 	$(`#upgrade--${jQueryKey}__cost`).text(
 		`${formatNumber(upgradeData.costs[0].amount)}` +

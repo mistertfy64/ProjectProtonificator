@@ -57,6 +57,34 @@ function updateHTML() {
 	$("#currency--electricity").text(formatNumber(game.currencies.electricity));
 	$("#currency--money").text(formatNumber(game.currencies.money));
 	$("#currency--particles").text(formatNumber(game.currencies.particles));
+	for (const upgradeCategory of Object.keys(game.upgrades)) {
+		for (const upgradeName in game.upgrades[upgradeCategory]) {
+			updateUpgradeButton(`${upgradeCategory}.${upgradeName}`);
+		}
+	}
+}
+
+/** Upgrades the upgrade button's stats. */
+function updateUpgradeButton(key) {
+	// get data
+	const playerUpgradeData = _.get(game.upgrades, key);
+	const upgradeData = getUpgradeData(key);
+	// change html
+	const jQueryKey = key.replace(".", "\\.");
+	// cost
+	$(`#upgrade--${jQueryKey}__level`).text(
+		playerUpgradeData.level.toString() +
+			"/" +
+			upgradeData?.maximumLevel.toString() ?? "inf"
+	);
+	$(`#upgrade--${jQueryKey}__cost`).text(
+		`${formatNumber(upgradeData.costs[0].amount)}` +
+			" " +
+			`${upgradeData.costs[0].currency}`
+	);
+	$(`#upgrade--${jQueryKey}__effect`).text(
+		`${formatNumber(upgradeData.effect)}`
+	);
 }
 
 function setParticleButtonState(state) {
