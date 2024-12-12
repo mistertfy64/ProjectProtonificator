@@ -40,6 +40,7 @@ function updateVariables(deltaTime) {
 				.mul(tickspeed)
 				.mul(deltaTimeMultiplier)
 				.mul(getUpgradeData("particles.p2").effect)
+				.mul(getUpgradeData("particles.p3").effect)
 		);
 	}
 	/* Takes care of the money generator */
