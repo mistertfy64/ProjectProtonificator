@@ -83,6 +83,7 @@ function initializeUpgradeButtons() {
 		});
 
 		$("#upgrades").append(button);
+		$("#upgrades").append(button);
 	}
 }
 
