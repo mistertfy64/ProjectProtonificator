@@ -31,6 +31,10 @@ function buyUpgrade(key) {
 }
 
 function getUpgradeData(key, data) {
+	if (data == null) {
+		data = _.get(game.upgrades, key);
+	}
+
 	const UPGRADES = {
 		speed: {
 			s1: {
