@@ -44,7 +44,7 @@ function getUpgradeData(key, data) {
 					},
 				],
 				effect: new Decimal("1.1").pow(data.level),
-				description: `Increases generator speed by x1.1 compounding.`,
+				description: `Increases game speed by x1.1 compounding.`,
 			},
 		},
 		particles: {
