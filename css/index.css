@@ -1,7 +1,21 @@
+:root {
+	--color-particle: #ffa500;
+}
+
 body {
 	font-family: "JetBrains Mono", monospace;
 }
 
 button {
 	font-family: "JetBrains Mono", monospace;
+	border: 2px solid #000000;
+}
+
+.button--menu {
+	color: #000000;
+	background-color: #eeeeee;
+}
+
+.button--particle {
+	color: var(--color-particle);
 }
