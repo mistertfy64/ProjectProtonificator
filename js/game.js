@@ -65,7 +65,7 @@ function updateHTML() {
 		}
 	}
 	// upgrade po (overload reset layer)
-	if (getUpgradeData("particles.po", game).effect.gt(ZERO)) {
+	if (getUpgradeData("particles.po").effect.gt(ZERO)) {
 		$("#switch-to-overload").show(0);
 	} else {
 		$("#switch-to-overload").hide(0);
