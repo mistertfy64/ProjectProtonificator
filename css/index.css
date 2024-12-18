@@ -1,7 +1,29 @@
+:root {
+	--color-particle: #ffa500;
+	--color-overload: #ff5e00;
+}
+
 body {
 	font-family: "JetBrains Mono", monospace;
 }
 
 button {
 	font-family: "JetBrains Mono", monospace;
+	border: 2px solid #000000;
+	margin: 2px;
+}
+
+.button--menu {
+	color: #000000;
+	background-color: #eeeeee;
+}
+
+.button--particle {
+	color: var(--color-particle);
+}
+
+.button--overload {
+	border-color: var(--color-overload);
+	color: var(--color-overload);
+	background-color: #000000;
 }

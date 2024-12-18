@@ -18,9 +18,14 @@
   Money: <span id="currency--money">0</span> /
   Particles: <span id="currency--particles">0</span>
   <br>
-  <button onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
-  <button onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
-  <button onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
+  <div style="color:var(--color-overload)" class="overload-related">
+    Overloaded Generator Scraps: <span id="currency-overloaded-generator-scraps">0</span>
+  </div>
+  <br>
+  <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
+  <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
+  <button class="button--menu button--overload" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
+  <button class="button--menu" onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
   <br>
   <br>
   <!-- Generators -->
@@ -33,21 +38,37 @@
     </button>
   </div>
   <!-- Upgrades -->
-  <div id="upgrades">Upgrades
-    <button onclick="buyUpgrade(`particles.p1`)" id="upgrade--particles.p1">
-      Upgrade p1
-      <br>
-      Doubles particles earned from converting electricity.
-      <br>
-      Level <span id="upgrade--particles.p1__level">0</span>
-      <br>
-      Currently: x<span id="upgrade--particles.p1__effect">1</span>
-      <br>
-      Cost: <span id="upgrade--particles.p1__cost">0</span>
-    </button>
+  <div id="upgrades">
+    Upgrades
+    <br>
   </div>
   <!-- Settings -->
-  <div id="settings">Settings</div>
+  <div id="settings">
+    Settings
+    <br>
+    <button onclick="exportSaveData()">
+      Export Save Data
+    </button>
+    <button onclick="importSaveData()">
+      Import Save Data
+    </button>
+  </div>
+  <!-- Overload -->
+  <div id="overload">
+    <button onclick="performOverload()" class="button--overload">Overload your generator.
+      <br>
+      This operation destroys your generator,
+      resetting s-upgrades and p-upgrades
+      (except for upgrade po),
+      <br>
+      electricity, money, and particles.
+      <br>
+      As a result, this operation will earn you <span id="gain-on-overload"></span> Overloaded Generator Scraps.
+    </button>
+    <div id="upgrades--overloaded">
+
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
   <script src="./js/lib/break_eternity.js"></script>
@@ -56,6 +77,8 @@
   <script src="./js/screens.js"></script>
   <script src="./js/upgrades.js"></script>
   <script src="./js/game.js"></script>
+  <script src="./js/overload.js"></script>
+  <script src="./js/saving.js"></script>
   <script src="./js/index.js"></script>
 </body>
 

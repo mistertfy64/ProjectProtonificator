@@ -6,6 +6,7 @@ function getNewGameData() {
 			electricity: new Decimal(1000),
 			money: new Decimal(100),
 			particles: new Decimal(0),
+			overloadedGeneratorScraps: new Decimal(0),
 		},
 		generators: {
 			particle: {
@@ -15,7 +16,15 @@ function getNewGameData() {
 				pressed: false,
 			},
 		},
+		milestones: {
+			overloaded: false,
+		},
 		upgrades: {
+			speed: {
+				s1: {
+					level: new Decimal(0),
+				},
+			},
 			particles: {
 				p1: {
 					level: new Decimal(0),
@@ -29,10 +38,12 @@ function getNewGameData() {
 				p4: {
 					level: new Decimal(0),
 				},
-				p5: {
+				po: {
 					level: new Decimal(0),
 				},
-				p6: {
+			},
+			overload: {
+				o1: {
 					level: new Decimal(0),
 				},
 			},
