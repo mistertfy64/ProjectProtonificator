@@ -116,7 +116,7 @@ function getUpgradeData(key, data) {
 					},
 				],
 				effect: new Decimal("2").pow(data.level),
-				description: `Increases electricity generated, particles gained from energy conversion, and money gained from selling particles by x2 compounding.`,
+				description: `Increases electricity generated and particles gained from energy conversion by x2 compounding.`,
 			},
 		},
 	};
