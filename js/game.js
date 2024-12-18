@@ -64,6 +64,12 @@ function updateHTML() {
 			updateUpgradeButton(`${upgradeCategory}.${upgradeName}`);
 		}
 	}
+	// upgrade po (overload reset layer)
+	if (getUpgradeData("particles.po", game).effect.gt(ZERO)) {
+		$("#switch-to-overload").show(0);
+	} else {
+		$("#switch-to-overload").hide(0);
+	}
 }
 
 /** Upgrades the upgrade button's stats. */
