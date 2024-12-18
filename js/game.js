@@ -30,6 +30,7 @@ function updateVariables(deltaTime) {
 					.mul(deltaTimeMultiplier)
 					.mul(getUpgradeData("particles.p1").effect)
 					.mul(getUpgradeData("particles.p4").effect)
+					.mul(getUpgradeData("overload.o1").effect)
 			);
 			game.currencies.electricity = game.currencies.electricity.sub(
 				new Decimal("1").mul(tickspeed).mul(deltaTimeMultiplier)
@@ -42,14 +43,15 @@ function updateVariables(deltaTime) {
 				.mul(deltaTimeMultiplier)
 				.mul(getUpgradeData("particles.p2").effect)
 				.mul(getUpgradeData("particles.p3").effect)
+				.mul(getUpgradeData("overload.o1").effect)
 		);
 	}
 	/* Takes care of the money generator */
 	if (game.generators.money.pressed) {
 		if (game.currencies.particles.gt(ZERO)) {
-			game.currencies.money = game.currencies.money.add(
-				game.currencies.particles
-			);
+			game.currencies.money = game.currencies.money
+				.add(game.currencies.particles)
+				.mul(getUpgradeData("overload.o1").effect);
 			game.currencies.particles = ZERO;
 		}
 	}
@@ -59,6 +61,9 @@ function updateHTML() {
 	$("#currency--electricity").text(formatNumber(game.currencies.electricity));
 	$("#currency--money").text(formatNumber(game.currencies.money));
 	$("#currency--particles").text(formatNumber(game.currencies.particles));
+	$("#currency-overloaded-generator-scraps").text(
+		formatNumber(game.currencies.overloadedGeneratorScraps)
+	);
 	for (const upgradeCategory of Object.keys(game.upgrades)) {
 		for (const upgradeName in game.upgrades[upgradeCategory]) {
 			updateUpgradeButton(`${upgradeCategory}.${upgradeName}`);
@@ -72,6 +77,9 @@ function updateHTML() {
 	}
 
 	// overload
+	$("#gain-on-overload").text(
+		formatNumber(game.currencies.money.div(1e7).pow(0.5))
+	);
 	if (game.milestones.overloaded) {
 		$(".overload-related").show(0);
 	} else {
