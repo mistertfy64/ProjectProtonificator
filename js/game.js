@@ -95,7 +95,7 @@ function updateUpgradeButton(key) {
 	$(`#upgrade--${jQueryKey}__cost`).text(
 		`${formatNumber(upgradeData.costs[0].amount)}` +
 			" " +
-			`${upgradeData.costs[0].currency}`
+			`${formatCurrency(upgradeData.costs[0].currency)}`
 	);
 	$(`#upgrade--${jQueryKey}__effect`).text(
 		`${formatNumber(upgradeData.effect)}`

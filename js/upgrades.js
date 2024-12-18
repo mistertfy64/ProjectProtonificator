@@ -14,19 +14,7 @@ function buyUpgrade(key) {
 	/** Change HTML */
 	const jQueryKey = key.replace(".", "\\.");
 	// cost
-	$(`#upgrade--${jQueryKey}__level`).text(
-		playerUpgradeData.level.toString() +
-			"/" +
-			upgradeData?.maximumLevel.toString() ?? "inf"
-	);
-	$(`#upgrade--${jQueryKey}__cost`).text(
-		`${formatNumber(upgradeData.costs[0].amount)}` +
-			" " +
-			`${upgradeData.costs[0].currency}`
-	);
-	$(`#upgrade--${jQueryKey}__effect`).text(
-		`${formatNumber(upgradeData.effect)}`
-	);
+	updateUpgradeButton(key);
 	return true;
 }
 
