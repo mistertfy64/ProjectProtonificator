@@ -70,7 +70,10 @@ function updateHTML() {
 		}
 	}
 	// upgrade po (overload reset layer)
-	if (getUpgradeData("particles.po").effect.gt(ZERO)) {
+	if (
+		getUpgradeData("particles.po").effect.gt(ZERO) ||
+		game.milestones.overloaded
+	) {
 		$("#switch-to-overload").show(0);
 	} else {
 		$("#switch-to-overload").hide(0);
