@@ -85,6 +85,7 @@ function getUpgradeData(key, data) {
 					},
 				],
 				effect: new Decimal(game.currencies.electricity)
+					.mul(data.level)
 					.pow(0.125)
 					.add(1),
 				description: `Increase electricity generated based on current electricity amount.`,
