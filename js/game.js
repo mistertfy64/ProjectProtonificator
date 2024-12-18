@@ -70,6 +70,13 @@ function updateHTML() {
 	} else {
 		$("#switch-to-overload").hide(0);
 	}
+
+	// overload
+	if (game.milestones.overloaded) {
+		$(".overload-related").show(0);
+	} else {
+		$(".overload-related").hide(0);
+	}
 }
 
 /** Upgrades the upgrade button's stats. */
