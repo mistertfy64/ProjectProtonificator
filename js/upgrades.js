@@ -90,6 +90,20 @@ function getUpgradeData(key, data) {
 					.add(1),
 				description: `Increase electricity generated based on current electricity amount.`,
 			},
+			p4: {
+				maximumLevel: new Decimal("1"),
+				costs: [
+					{
+						amount: new Decimal("1000000"),
+						currency: "money",
+					},
+				],
+				effect: new Decimal(game.currencies.electricity)
+					.mul(data.level)
+					.pow(0.0875)
+					.add(1),
+				description: `Increase particles earned from converting electricity based on current electricity amount.`,
+			},
 		},
 	};
 

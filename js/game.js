@@ -29,6 +29,7 @@ function updateVariables(deltaTime) {
 					.mul(tickspeed)
 					.mul(deltaTimeMultiplier)
 					.mul(getUpgradeData("particles.p1").effect)
+					.mul(getUpgradeData("particles.p4").effect)
 			);
 			game.currencies.electricity = game.currencies.electricity.sub(
 				new Decimal("1").mul(tickspeed).mul(deltaTimeMultiplier)

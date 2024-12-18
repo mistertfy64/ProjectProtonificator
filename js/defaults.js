@@ -31,6 +31,9 @@ function getNewGameData() {
 				p3: {
 					level: new Decimal(0),
 				},
+				p4: {
+					level: new Decimal(0),
+				},
 			},
 		},
 	};
