@@ -1,12 +1,12 @@
 function exportSaveData() {
-	const data = JSON.stringify(game);
+	const data = btoa(JSON.stringify(game));
 	const message =
 		"This is your save data. Make sure to save this text in somewhere safe!";
 	prompt(message, data);
 }
 
 function importSaveData() {
-	const importedData = JSON.parse(prompt("Enter your save data here."));
+	const importedData = JSON.parse(atob(prompt("Enter your save data here.")));
 	const importedDataKeys = keyify(importedData);
 	const initialData = getNewGameData();
 	const initialDataKeys = new Set(keyify(initialData));
