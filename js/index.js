@@ -3,9 +3,7 @@ const game = getNewGameData();
 function initialize() {
 	// TODO: add saving/loading
 	initializeEvents();
-	$("#generators").show(0);
-	$("#upgrades").hide(0);
-	$("#settings").hide(0);
+	changeScreenTo("generators");
 	initializeUpgradeButtons();
 }
 
