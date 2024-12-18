@@ -1,3 +1,8 @@
+const UPGRADE_LOCATIONS = {
+	"particles": "#upgrades",
+	"overload": "#upgrades--overloaded",
+};
+
 function formatCurrency(name) {
 	if (name === "money") {
 		return "money";
@@ -92,8 +97,8 @@ function initializeUpgradeButtons() {
 				onclick: `buyUpgrade("${upgradeCategory}.${upgradeName}")`,
 			});
 
-			$("#upgrades").append(button);
-			$("#upgrades").append(`<br>`);
+			$(UPGRADE_LOCATIONS[upgradeCategory]).append(button);
+			$(UPGRADE_LOCATIONS[upgradeCategory]).append(`<br>`);
 		}
 	}
 }
