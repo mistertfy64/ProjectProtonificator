@@ -1,3 +1,12 @@
+function formatCurrency(name) {
+	if (name === "money") {
+		return "money";
+	}
+	if (name === "overloadedGeneratorScraps") {
+		return "overloaded generator scraps";
+	}
+}
+
 const game = getNewGameData();
 
 function initialize() {
@@ -72,7 +81,9 @@ function initializeUpgradeButtons() {
 				upgradeData.costs[0].amount
 			)}`;
 			buttonHTML += ` `;
-			buttonHTML += `${upgradeData.costs[0].currency}</span>`;
+			buttonHTML += `${formatCurrency(
+				upgradeData.costs[0].currency
+			)}</span>`;
 
 			/** Creates the button and places it. */
 			const button = $("<button></button>", {
