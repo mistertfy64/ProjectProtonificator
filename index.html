@@ -20,7 +20,7 @@
   <br>
   <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
   <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
-  <button class="button--menu" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
+  <button class="button--menu button--overload" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
   <button class="button--menu" onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
   <br>
   <br>
@@ -47,6 +47,15 @@
     </button>
     <button onclick="importSaveData()">
       Import Save Data
+    </button>
+  </div>
+  <!-- Overload -->
+  <div id="overload">
+    <button class="button--overload">Overload your generator.
+      <br>
+      This operation destroys your generator, resetting s-upgrades and p-upgrades, electricity, money, and particles.
+      <br>
+      As a result, this operation will earn you <span id="gain-on-overload"></span> Generator Scraps.
     </button>
   </div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
