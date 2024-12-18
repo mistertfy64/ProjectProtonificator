@@ -55,9 +55,13 @@
   </div>
   <!-- Overload -->
   <div id="overload">
-    <button class="button--overload">Overload your generator.
+    <button onclick="performOverload()" class="button--overload">Overload your generator.
       <br>
-      This operation destroys your generator, resetting s-upgrades and p-upgrades, electricity, money, and particles.
+      This operation destroys your generator,
+      resetting s-upgrades and p-upgrades
+      (except for upgrade po),
+      <br>
+      electricity, money, and particles.
       <br>
       As a result, this operation will earn you <span id="gain-on-overload"></span> Generator Scraps.
     </button>
@@ -73,6 +77,7 @@
   <script src="./js/screens.js"></script>
   <script src="./js/upgrades.js"></script>
   <script src="./js/game.js"></script>
+  <script src="./js/overload.js"></script>
   <script src="./js/saving.js"></script>
   <script src="./js/index.js"></script>
 </body>
