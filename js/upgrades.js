@@ -104,6 +104,7 @@ function getUpgradeData(key, data) {
 					.add(1),
 				description: `Increase particles earned from converting electricity based on current electricity amount.`,
 			},
+			/**  This unlocks prestige layer 1: "Overload" */
 			po: {
 				maximumLevel: new Decimal("1"),
 				costs: [
@@ -112,8 +113,8 @@ function getUpgradeData(key, data) {
 						currency: "money",
 					},
 				],
+				// TODO: Make this not go in format number.
 				effect: new Decimal(data.level),
-				// This unlocks prestige layer 1: "Overload"
 				description: `Unlocks your ability to destroy your particle generator and your currencies.`,
 			},
 		},
