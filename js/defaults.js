@@ -34,6 +34,9 @@ function getNewGameData() {
 				p4: {
 					level: new Decimal(0),
 				},
+				po: {
+					level: new Decimal(0),
+				},
 			},
 		},
 	};
