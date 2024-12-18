@@ -1,5 +1,6 @@
 :root {
 	--color-particle: #ffa500;
+	--color-overload: #ff5e00;
 }
 
 body {
@@ -19,4 +20,10 @@ button {
 
 .button--particle {
 	color: var(--color-particle);
+}
+
+.button--overload {
+	border-color: var(--color-overload);
+	color: var(--color-overload);
+	background-color: #000000;
 }
