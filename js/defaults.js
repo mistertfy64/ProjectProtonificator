@@ -4,7 +4,7 @@ function getNewGameData() {
 	const gameData = {
 		currencies: {
 			electricity: new Decimal(1000),
-			money: new Decimal(100),
+			money: new Decimal(0),
 			particles: new Decimal(0),
 			overloadedGeneratorScraps: new Decimal(0),
 		},
