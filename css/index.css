@@ -27,3 +27,9 @@ button {
 	color: var(--color-overload);
 	background-color: #000000;
 }
+
+.currency-container {
+	display: flex;
+	height: 48px;
+	align-items: center;
+}
