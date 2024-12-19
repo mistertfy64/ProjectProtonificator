@@ -1,4 +1,5 @@
 const UPGRADE_LOCATIONS = {
+	"speed": "#upgrades",
 	"particles": "#upgrades",
 	"overload": "#upgrades--overloaded",
 };
