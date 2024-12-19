@@ -33,5 +33,9 @@ button {
 	height: 36px;
 	align-items: center;
 }
-
-.
+.overhead-panel {
+	width: 100%;
+	height: 100px;
+	background: #BBBBBB;
+	position: fixed;
+}
