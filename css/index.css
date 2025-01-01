@@ -36,6 +36,7 @@ button {
 .overhead-panel {
 	width: 100%;
 	height: 100px;
-	background: #BBBBBB;
+	background: #bbbbbb;
 	position: fixed;
+	z-index: -1;
 }
