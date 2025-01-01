@@ -18,6 +18,14 @@ function buyUpgrade(key) {
 	return true;
 }
 
+/**
+ * Get an upgrade's data, such as effects, costs, etc.
+ * Note
+ * @param {string} key The upgrade to get the data of
+ * @param {string|null} data The data to use as context.
+ * If none is specified, the user's game data is used instead.
+ * @returns
+ */
 function getUpgradeData(key, data) {
 	if (data == null) {
 		data = _.get(game.upgrades, key);
