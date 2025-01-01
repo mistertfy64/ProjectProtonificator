@@ -103,7 +103,7 @@ function getUpgradeData(key, data) {
 				],
 				// TODO: Make this not go in format number.
 				effect: new Decimal(data.level),
-				modifiers: "boolean",
+				modifiers: { display: "boolean" },
 				description: `Unlocks your ability to destroy your particle generator and your currencies.`,
 			},
 		},
@@ -128,7 +128,7 @@ function getUpgradeData(key, data) {
 					},
 				],
 				effect: new Decimal(data.level),
-				modifiers: "boolean",
+				modifiers: { display: "boolean" },
 				description: "Unlocks a new p upgrade.",
 			},
 		},

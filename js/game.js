@@ -108,9 +108,20 @@ function updateUpgradeButton(key) {
 			" " +
 			`${formatCurrency(upgradeData.costs[0].currency)}`
 	);
-	$(`#upgrade--${jQueryKey}__effect`).text(
-		`${formatNumber(upgradeData.effect)}`
-	);
+
+	if (upgradeData.modifiers?.display?.indexOf("boolean") > -1) {
+		$(`#upgrade--${jQueryKey}__effect`).text(
+			`${
+				playerUpgradeData.level.gte(new Decimal("1"))
+					? "Unlocked"
+					: "Not unlocked"
+			}`
+		);
+	} else {
+		$(`#upgrade--${jQueryKey}__effect`).text(
+			`${formatNumber(upgradeData.effect)}`
+		);
+	}
 }
 
 function setParticleButtonState(state) {
