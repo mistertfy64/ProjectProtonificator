@@ -115,8 +115,8 @@ function getUpgradeData(key, data) {
 						currency: "overloadedGeneratorScraps",
 					},
 				],
-				effect: new Decimal("2").pow(data.level),
-				description: `Increases electricity generated and particles gained from energy conversion by x2 compounding.`,
+				effect: new Decimal("0.5").mul(data.level).add("1"),
+				description: `Increases electricity generated and particles gained from energy conversion by 50% additive.`,
 			},
 		},
 	};
