@@ -88,6 +88,13 @@ function updateHTML() {
 	} else {
 		$(".overload-related").hide(0);
 	}
+
+	// overload upgrade o2
+	if (_.get(game.upgrades, "overload.o2").level.gte(new Decimal("1"))) {
+		$("#upgrade--particles\\.p5").show(0);
+	} else {
+		$("#upgrade--particles\\.p5").hide(0);
+	}
 }
 
 /** Upgrades the upgrade button's stats. */

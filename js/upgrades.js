@@ -106,6 +106,19 @@ function getUpgradeData(key, data) {
 				modifiers: { display: "boolean" },
 				description: `Unlocks your ability to destroy your particle generator and your currencies.`,
 			},
+			p5: {
+				maximumLevel: new Decimal("50"),
+				costs: [
+					{
+						amount: new Decimal("8e8").mul(
+							new Decimal("1.2").pow(data.level)
+						),
+						currency: "money",
+					},
+				],
+				effect: new Decimal("1.01").pow(data.level),
+				description: `Increases money earned from selling particles by x1.01 compounding.`,
+			},
 		},
 		overload: {
 			o1: {

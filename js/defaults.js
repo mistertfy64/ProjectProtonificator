@@ -41,6 +41,9 @@ function getNewGameData() {
 				po: {
 					level: new Decimal(0),
 				},
+				p5: {
+					level: new Decimal(0),
+				},
 			},
 			overload: {
 				o1: {
