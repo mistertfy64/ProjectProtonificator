@@ -103,6 +103,7 @@ function getUpgradeData(key, data) {
 				],
 				// TODO: Make this not go in format number.
 				effect: new Decimal(data.level),
+				modifiers: "boolean",
 				description: `Unlocks your ability to destroy your particle generator and your currencies.`,
 			},
 		},
@@ -117,6 +118,18 @@ function getUpgradeData(key, data) {
 				],
 				effect: new Decimal("0.5").mul(data.level).add("1"),
 				description: `Increases electricity generated and particles gained from energy conversion by 50% additive.`,
+			},
+			o2: {
+				maximumLevel: new Decimal("1"),
+				costs: [
+					{
+						amount: new Decimal("250"),
+						currency: "overloadedGeneratorScraps",
+					},
+				],
+				effect: new Decimal(data.level),
+				modifiers: "boolean",
+				description: "Unlocks a new p upgrade.",
 			},
 		},
 	};
