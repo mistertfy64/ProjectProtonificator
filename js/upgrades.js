@@ -152,6 +152,18 @@ function getUpgradeData(key, data) {
 				modifiers: { display: "boolean" },
 				description: "Unlocks a new p upgrade.",
 			},
+			o3: {
+				maximumLevel: new Decimal("1"),
+				costs: [
+					{
+						amount: new Decimal("5000"),
+						currency: "overloadedGeneratorScraps",
+					},
+				],
+				effect: new Decimal(data.level),
+				modifiers: { display: "boolean" },
+				description: "Unlocks leveling.",
+			},
 		},
 	};
 

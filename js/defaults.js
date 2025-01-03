@@ -52,6 +52,9 @@ function getNewGameData() {
 				o2: {
 					level: new Decimal(0),
 				},
+				o3: {
+					level: new Decimal(0),
+				},
 			},
 		},
 	};
