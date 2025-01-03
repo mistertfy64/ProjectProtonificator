@@ -9,29 +9,28 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
   <link href="./css/index.css" rel="stylesheet">
   <title>ProjectProtonificator</title>
-  <div class="overhead-panel">
 
-  </div>
 </head>
 
 <body>
-  ProjectProtonificator
-  <br>
-  <div class="currency-container-container">
-    <div class="currency-container">
-      <img title="Electricity" src="./assets/images/electricity.png" width="auto" height="32"><span id="currency--electricity">0</span>
-    </div>
-    <div class="currency-container">
-      <img title="Money" src="./assets/images/money.png" width="auto" height="32"> <span id="currency--money">0</span>
-    </div>
-    <div class="currency-container">
-      <img title="Particles" src="./assets/images/particle.png" width="auto" height="32"> <span id="currency--particles">0</span>
-    </div><br>
-    <div style="color:var(--color-overload)" class="overload-related">
-      Overloaded Generator Scraps: <span id="currency-overloaded-generator-scraps">0</span>
+  <div class="overhead-panel">
+    ProjectProtonificator
+    <div class="currency-container-container">
+      <div class="currency-container">
+        <img title="Electricity" src="./assets/images/electricity.png" width="auto" height="32"><span id="currency--electricity">0</span>
+      </div>
+      <div class="currency-container">
+        <img title="Money" src="./assets/images/money.png" width="auto" height="32"> <span id="currency--money">0</span>
+      </div>
+      <div class="currency-container">
+        <img title="Particles" src="./assets/images/particle.png" width="auto" height="32"> <span id="currency--particles">0</span>
+      </div><br>
+      <div style="color:var(--color-overload)" class="overload-related">
+        Overloaded Generator Scraps: <span id="currency-overloaded-generator-scraps">0</span>
+      </div>
     </div>
   </div>
-  <br>
+  <br><br><br><br>
   <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
   <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
   <button class="button--menu button--overload" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
