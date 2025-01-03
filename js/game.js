@@ -119,6 +119,18 @@ function updateHTML() {
 	} else {
 		$("#upgrade--particles\\.p5").hide(0);
 	}
+
+	// overload upgrade o3, levelling
+	if (
+		_.get(game.upgrades, "overload.o3").level.gte(new Decimal("1")) ||
+		game.milestones.unlockedLeveling
+	) {
+		// TODO: move the variable assignment operation somewhere else.
+		game.milestones.unlockedLeveling = true;
+		$("#switch-to-levelling").show(0);
+	} else {
+		$("#switch-to-levelling").hide(0);
+	}
 }
 
 /** Upgrades the upgrade button's stats. */

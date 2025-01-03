@@ -18,6 +18,7 @@ function getNewGameData() {
 		},
 		milestones: {
 			overloaded: false,
+			unlockedLeveling: false,
 		},
 		upgrades: {
 			speed: {
