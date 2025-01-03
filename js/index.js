@@ -106,6 +106,7 @@ function initializeUpgradeButtons() {
 				id: `upgrade--${upgradeCategory}.${upgradeName}`,
 				html: buttonHTML,
 				onclick: `buyUpgrade("${upgradeCategory}.${upgradeName}")`,
+				class: `button--upgrade`,
 			});
 
 			$(UPGRADE_LOCATIONS[upgradeCategory]).append(button);

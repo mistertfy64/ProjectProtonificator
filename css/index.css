@@ -29,6 +29,10 @@ button {
 	background-color: #000000;
 }
 
+.button--upgrade {
+	width: 12.5vw;
+}
+
 .currency-container {
 	display: flex;
 	height: 36px;
