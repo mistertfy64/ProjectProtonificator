@@ -67,3 +67,17 @@ button {
 #content {
 	text-align: center;
 }
+
+#levelling__bar {
+	width: 50vw;
+	height: 32px;
+	border-color: var(--color-levelling);
+	border: 2px;
+	border-style: solid;
+	margin: auto;
+	position: relative;
+}
+
+#levelling {
+	text-align: center;
+}
