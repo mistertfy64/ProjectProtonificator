@@ -1,6 +1,7 @@
 :root {
 	--color-particle: #ffa500;
 	--color-overload: #ff5e00;
+	--color-levelling: #1464db;
 }
 
 body {
@@ -27,6 +28,12 @@ button {
 	border-color: var(--color-overload);
 	color: var(--color-overload);
 	background-color: #000000;
+}
+
+.button--levelling {
+	border-color: var(--color-levelling);
+	background-color: #ffffff;
+	color: var(--color-levelling);
 }
 
 .button--upgrade {
