@@ -39,57 +39,59 @@
     </div>
   </div>
   <br><br><br><br>
-  <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
-  <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
-  <button class="button--menu button--overload" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
-  <button class="button--menu" onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
-  <br>
-  <br>
-  <!-- Generators -->
-  <div id="generators">
-    <button id="generator--particles">
-      Generate Particles
-    </button>
-    <button id="generator--money">
-      Sell Particles for Money
-    </button>
-  </div>
-  <!-- Upgrades -->
-  <div id="upgrades">
-    Upgrades
+  <div id="content">
+    <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
+    <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
+    <button class="button--menu button--overload" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
+    <button class="button--menu" onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
     <br>
-  </div>
-  <!-- Settings -->
-  <div id="settings">
-    Settings
     <br>
-    <button onclick="exportSaveData()">
-      Export Save Data
-    </button>
-    <button onclick="importSaveData()">
-      Import Save Data
-    </button>
-  </div>
-  <!-- Overload -->
-  <div id="overload">
-    <button onclick="performOverload()" class="button--overload">Overload your generator.
-      <br>
-      This operation destroys your generator,
-      resetting s-upgrades and p-upgrades
-      (except for upgrade po),
-      <br>
-      electricity, money, and particles.
-      <br>
-      As a result, this operation will earn you <span id="gain-on-overload"></span> Overloaded Generator Scraps.
-    </button>
-    <div id="upgrades--overloaded">
-
+    <!-- Generators -->
+    <div id="generators">
+      <button id="generator--particles">
+        Generate Particles
+      </button>
+      <button id="generator--money">
+        Sell Particles for Money
+      </button>
     </div>
+    <!-- Upgrades -->
+    <div id="upgrades">
+      Upgrades
+      <br>
+    </div>
+    <!-- Settings -->
+    <div id="settings">
+      Settings
+      <br>
+      <button onclick="exportSaveData()">
+        Export Save Data
+      </button>
+      <button onclick="importSaveData()">
+        Import Save Data
+      </button>
+    </div>
+    <!-- Overload -->
+    <div id="overload">
+      <button onclick="performOverload()" class="button--overload">Overload your generator.
+        <br>
+        This operation destroys your generator,
+        resetting s-upgrades and p-upgrades
+        (except for upgrade po),
+        <br>
+        electricity, money, and particles.
+        <br>
+        As a result, this operation will earn you <span id="gain-on-overload"></span> Overloaded Generator Scraps.
+      </button>
+      <div id="upgrades--overloaded">
+
+      </div>
+    </div>
+    <br>
+    <footer>
+      <a href="https://github.com/mistertfy64/ProjectProtonificator">Source Code</a> | Created by <a href="https://mistertfy64.com">mistertfy64</a> and others.
+    </footer>
   </div>
-  <br>
-  <footer>
-    <a href="https://github.com/mistertfy64/ProjectProtonificator">Source Code</a> | Created by <a href="https://mistertfy64.com">mistertfy64</a> and others.
-  </footer>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
   <script src="./js/lib/break_eternity.js"></script>
