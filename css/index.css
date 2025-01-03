@@ -39,6 +39,7 @@ button {
 
 .currency-container-container {
 	display: flex;
+	justify-content: center;
 	flex-direction: row;
 }
 
@@ -49,6 +50,7 @@ button {
 	background: #bbbbbb;
 	position: fixed;
 	z-index: -1;
+	text-align: center;
 }
 
 #content {
