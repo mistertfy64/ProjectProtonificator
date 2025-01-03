@@ -34,11 +34,15 @@ function getElectricityGeneration(tickspeed, deltaTimeMultiplier) {
 		.mul(getUpgradeData("overload.o1").effect);
 }
 
-function updateVariables(deltaTime) {
-	const deltaTimeMultiplier = new Decimal(deltaTime).div(new Decimal(1000));
-	const tickspeed = new Decimal(1)
+function getTickspeed() {
+	return new Decimal(1)
 		.mul(getUpgradeData("speed.s1").effect)
 		.div(TICK_INTERVAL);
+}
+
+function updateVariables(deltaTime) {
+	const deltaTimeMultiplier = new Decimal(deltaTime).div(new Decimal(1000));
+	const tickspeed = getTickspeed();
 	/* Takes care of the particle generator */
 	if (game.generators.particle.pressed) {
 		if (game.currencies.electricity.gt(ZERO)) {
@@ -72,6 +76,18 @@ function updateHTML() {
 	$("#currency-overloaded-generator-scraps").text(
 		formatNumber(game.currencies.overloadedGeneratorScraps)
 	);
+
+	// per second
+	$("#currency--electricity--generation").text(
+		`+${formatNumber(getElectricityGeneration(getTickspeed(), 1))}/s`
+	);
+
+	$("#currency--particles--generation").text(
+		`+${formatNumber(
+			getParticleGeneration(getTickspeed(), 1)
+		)}/s when activated`
+	);
+
 	for (const upgradeCategory of Object.keys(game.upgrades)) {
 		for (const upgradeName in game.upgrades[upgradeCategory]) {
 			updateUpgradeButton(`${upgradeCategory}.${upgradeName}`);
