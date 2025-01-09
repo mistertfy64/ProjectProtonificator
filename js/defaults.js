@@ -7,6 +7,7 @@ function getNewGameData() {
 			money: new Decimal(0),
 			particles: new Decimal(0),
 			overloadedGeneratorScraps: new Decimal(0),
+			experiencePoints: new Decimal(0),
 		},
 		generators: {
 			particle: {
