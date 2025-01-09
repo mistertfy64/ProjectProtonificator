@@ -123,14 +123,16 @@ function updateHTML() {
 	// overload upgrade o3, levelling
 	if (
 		_.get(game.upgrades, "overload.o3").level.gte(new Decimal("1")) ||
-		game.milestones.unlockedLeveling
+		game.milestones.unlockedLevelling
 	) {
 		// TODO: move the variable assignment operation somewhere else.
-		game.milestones.unlockedLeveling = true;
+		game.milestones.unlockedLevelling = true;
 		$("#switch-to-levelling").show(0);
 	} else {
 		$("#switch-to-levelling").hide(0);
 	}
+
+	// levelling
 }
 
 /** Upgrades the upgrade button's stats. */

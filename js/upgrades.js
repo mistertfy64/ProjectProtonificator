@@ -162,7 +162,7 @@ function getUpgradeData(key, data) {
 				],
 				effect: new Decimal(data.level),
 				modifiers: { display: "boolean" },
-				description: "Unlocks leveling.",
+				description: "Unlocks levelling.",
 			},
 		},
 	};
