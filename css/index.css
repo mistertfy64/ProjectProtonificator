@@ -1,9 +1,11 @@
 :root {
 	--color-particle: #ffa500;
 	--color-overload: #ff5e00;
+	--color-levelling: #1464db;
 }
 
 body {
+	margin: 0;
 	font-family: "JetBrains Mono", monospace;
 }
 
@@ -26,4 +28,55 @@ button {
 	border-color: var(--color-overload);
 	color: var(--color-overload);
 	background-color: #000000;
+}
+
+.button--levelling {
+	border-color: var(--color-levelling);
+	background-color: #ffffff;
+	color: var(--color-levelling);
+}
+
+.button--upgrade {
+	width: 20vw;
+}
+
+.currency-container {
+	display: flex;
+	height: 36px;
+	align-items: center;
+	min-width: fit-content;
+	padding: 0 16px;
+}
+
+.currency-container-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.overhead-panel {
+	width: 100%;
+	min-height: fit-content;
+	padding: 4px;
+	background: #bbbbbb;
+	position: fixed;
+	text-align: center;
+}
+
+#content {
+	text-align: center;
+}
+
+#levelling__bar {
+	width: 50vw;
+	height: 32px;
+	border-color: var(--color-levelling);
+	border: 2px;
+	border-style: solid;
+	margin: auto;
+	position: relative;
+}
+
+#levelling {
+	text-align: center;
 }

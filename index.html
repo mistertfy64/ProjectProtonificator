@@ -9,65 +9,104 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
   <link href="./css/index.css" rel="stylesheet">
   <title>ProjectProtonificator</title>
+
 </head>
 
 <body>
-  ProjectProtonificator
-  <br>
-  Electricity: <span id="currency--electricity">0</span> /
-  Money: <span id="currency--money">0</span> /
-  Particles: <span id="currency--particles">0</span>
-  <br>
-  <div style="color:var(--color-overload)" class="overload-related">
-    Overloaded Generator Scraps: <span id="currency-overloaded-generator-scraps">0</span>
-  </div>
-  <br>
-  <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
-  <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
-  <button class="button--menu button--overload" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
-  <button class="button--menu" onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
-  <br>
-  <br>
-  <!-- Generators -->
-  <div id="generators">
-    <button id="generator--particles">
-      Generate Particles
-    </button>
-    <button id="generator--money">
-      Sell Particles for Money
-    </button>
-  </div>
-  <!-- Upgrades -->
-  <div id="upgrades">
-    Upgrades
-    <br>
-  </div>
-  <!-- Settings -->
-  <div id="settings">
-    Settings
-    <br>
-    <button onclick="exportSaveData()">
-      Export Save Data
-    </button>
-    <button onclick="importSaveData()">
-      Import Save Data
-    </button>
-  </div>
-  <!-- Overload -->
-  <div id="overload">
-    <button onclick="performOverload()" class="button--overload">Overload your generator.
-      <br>
-      This operation destroys your generator,
-      resetting s-upgrades and p-upgrades
-      (except for upgrade po),
-      <br>
-      electricity, money, and particles.
-      <br>
-      As a result, this operation will earn you <span id="gain-on-overload"></span> Overloaded Generator Scraps.
-    </button>
-    <div id="upgrades--overloaded">
-
+  <div class="overhead-panel">
+    ProjectProtonificator
+    <div class="currency-container-container">
+      <div class="currency-container">
+        <img title="Electricity" src="./assets/images/electricity.png" width="auto" height="32">
+        <span id="currency--electricity">0</span>
+        &nbsp;
+        (<span id="currency--electricity--generation">0</span>)
+      </div>
+      <div class="currency-container">
+        <img title="Money" src="./assets/images/money.png" width="auto" height="32">
+        <span id="currency--money">0</span>
+      </div>
+      <div class="currency-container">
+        <img title="Particles" src="./assets/images/particle.png" width="auto" height="32">
+        <span id="currency--particles">0</span>
+        &nbsp;
+        (<span id="currency--particles--generation">0</span>)
+      </div><br>
+      <div style="color:var(--color-overload)" class="overload-related currency-container">
+        <img title="Overloaded Generator Scraps" src="./assets/images/overload-generator-scrap.png" width="auto" height="32">
+        <span id="currency-overloaded-generator-scraps">0</span>
+      </div>
     </div>
+  </div>
+  <br><br><br><br>
+  <div id="content">
+    <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
+    <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
+    <button class="button--menu button--overload" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
+    <button class="button--menu button--levelling" onclick="changeScreenTo(`levelling`)" id="switch-to-levelling">Levelling</button>
+    <button class="button--menu" onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
+    <br>
+    <br>
+    <!-- Generators -->
+    <div id="generators">
+      <button id="generator--particles">
+        Generate Particles
+      </button>
+      <button id="generator--money">
+        Sell Particles for Money
+      </button>
+    </div>
+    <!-- Upgrades -->
+    <div id="upgrades">
+      Upgrades
+      <br>
+    </div>
+    <!-- Settings -->
+    <div id="settings">
+      Settings
+      <br>
+      <button onclick="exportSaveData()">
+        Export Save Data
+      </button>
+      <button onclick="importSaveData()">
+        Import Save Data
+      </button>
+    </div>
+    <!-- Overload -->
+    <div id="overload">
+      <button onclick="performOverload()" class="button--overload">Overload your generator.
+        <br>
+        This operation destroys your generator,
+        resetting s-upgrades and p-upgrades
+        (except for upgrade po),
+        <br>
+        electricity, money, and particles.
+        <br>
+        As a result, this operation will earn you <span id="gain-on-overload"></span> Overloaded Generator Scraps.
+      </button>
+      <div id="upgrades--overloaded">
+
+      </div>
+    </div>
+    <!-- Levelling -->
+    <div id="levelling">
+      Levelling Level <span id="levelling-level"></span>
+      <br>
+      <span id="currency--experience-points">0</span> experience points
+      <br>
+      <span id="experience-points-to-next-level">10</span> experience points for next level
+      <div id="levelling__bar">
+
+      </div>
+      <button onclick="addExperiencePoints()">Get Experience Points</button>
+      <div id="upgrades--levelling">
+
+      </div>
+    </div>
+    <br>
+    <footer>
+      <a href="https://github.com/mistertfy64/ProjectProtonificator">Source Code</a> | Created by <a href="https://mistertfy64.com">mistertfy64</a> and others.
+    </footer>
   </div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
@@ -78,6 +117,7 @@
   <script src="./js/upgrades.js"></script>
   <script src="./js/game.js"></script>
   <script src="./js/overload.js"></script>
+  <script src="./js/levelling.js"></script>
   <script src="./js/saving.js"></script>
   <script src="./js/index.js"></script>
 </body>

@@ -18,6 +18,14 @@ function buyUpgrade(key) {
 	return true;
 }
 
+/**
+ * Get an upgrade's data, such as effects, costs, etc.
+ * Note
+ * @param {string} key The upgrade to get the data of
+ * @param {string|null} data The data to use as context.
+ * If none is specified, the user's game data is used instead.
+ * @returns
+ */
 function getUpgradeData(key, data) {
 	if (data == null) {
 		data = _.get(game.upgrades, key);
@@ -103,7 +111,21 @@ function getUpgradeData(key, data) {
 				],
 				// TODO: Make this not go in format number.
 				effect: new Decimal(data.level),
+				modifiers: { display: "boolean" },
 				description: `Unlocks your ability to destroy your particle generator and your currencies.`,
+			},
+			p5: {
+				maximumLevel: new Decimal("50"),
+				costs: [
+					{
+						amount: new Decimal("8e8").mul(
+							new Decimal("1.2").pow(data.level)
+						),
+						currency: "money",
+					},
+				],
+				effect: new Decimal("1.01").pow(data.level),
+				description: `Increases money earned from selling particles by x1.01 compounding.`,
 			},
 		},
 		overload: {
@@ -115,8 +137,32 @@ function getUpgradeData(key, data) {
 						currency: "overloadedGeneratorScraps",
 					},
 				],
-				effect: new Decimal("2").pow(data.level),
-				description: `Increases electricity generated and particles gained from energy conversion by x2 compounding.`,
+				effect: new Decimal("0.5").mul(data.level).add("1"),
+				description: `Increases electricity generated and particles gained from energy conversion by 50% additive.`,
+			},
+			o2: {
+				maximumLevel: new Decimal("1"),
+				costs: [
+					{
+						amount: new Decimal("250"),
+						currency: "overloadedGeneratorScraps",
+					},
+				],
+				effect: new Decimal(data.level),
+				modifiers: { display: "boolean" },
+				description: "Unlocks a new p upgrade.",
+			},
+			o3: {
+				maximumLevel: new Decimal("1"),
+				costs: [
+					{
+						amount: new Decimal("5000"),
+						currency: "overloadedGeneratorScraps",
+					},
+				],
+				effect: new Decimal(data.level),
+				modifiers: { display: "boolean" },
+				description: "Unlocks levelling.",
 			},
 		},
 	};

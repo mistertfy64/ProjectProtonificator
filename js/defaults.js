@@ -7,6 +7,7 @@ function getNewGameData() {
 			money: new Decimal(0),
 			particles: new Decimal(0),
 			overloadedGeneratorScraps: new Decimal(0),
+			experiencePoints: new Decimal(0),
 		},
 		generators: {
 			particle: {
@@ -18,6 +19,7 @@ function getNewGameData() {
 		},
 		milestones: {
 			overloaded: false,
+			unlockedLevelling: false,
 		},
 		upgrades: {
 			speed: {
@@ -41,9 +43,18 @@ function getNewGameData() {
 				po: {
 					level: new Decimal(0),
 				},
+				p5: {
+					level: new Decimal(0),
+				},
 			},
 			overload: {
 				o1: {
+					level: new Decimal(0),
+				},
+				o2: {
+					level: new Decimal(0),
+				},
+				o3: {
 					level: new Decimal(0),
 				},
 			},

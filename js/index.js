@@ -70,18 +70,28 @@ function initializeUpgradeButtons() {
 				continue;
 			}
 
+			const level = game.upgrades[upgradeCategory][upgradeName].level;
+
 			let buttonHTML = "";
 			buttonHTML += `Upgrade ${upgradeName}`;
 			buttonHTML += `<br>`;
 			buttonHTML += upgradeData.description;
 			buttonHTML += `<br>`;
-			buttonHTML += `Level <span id="upgrade--${upgradeCategory}.${upgradeName}__level">${game.upgrades[upgradeCategory][upgradeName].level}`;
+			buttonHTML += `Level <span id="upgrade--${upgradeCategory}.${upgradeName}__level">${level}`;
 			buttonHTML += `/`;
 			buttonHTML += `${upgradeData.maximumLevel.toString()}</span>`;
 			buttonHTML += `<br>`;
-			buttonHTML += `Currently: x<span id="upgrade--${upgradeCategory}.${upgradeName}__effect">${formatNumber(
-				upgradeData.effect
-			)}</span>`;
+
+			if (upgradeData.modifiers?.display?.indexOf("boolean") > -1) {
+				buttonHTML += `Currently: <span id="upgrade--${upgradeCategory}.${upgradeName}__effect">${
+					level.gte(new Decimal("1")) ? "Unlocked" : "Not unlocked"
+				}</span>`;
+			} else {
+				buttonHTML += `Currently: x<span id="upgrade--${upgradeCategory}.${upgradeName}__effect">${formatNumber(
+					upgradeData.effect
+				)}</span>`;
+			}
+
 			buttonHTML += `<br>`;
 			buttonHTML += `Cost: <span id="upgrade--${upgradeCategory}.${upgradeName}__cost">${formatNumber(
 				upgradeData.costs[0].amount
@@ -96,6 +106,7 @@ function initializeUpgradeButtons() {
 				id: `upgrade--${upgradeCategory}.${upgradeName}`,
 				html: buttonHTML,
 				onclick: `buyUpgrade("${upgradeCategory}.${upgradeName}")`,
+				class: `button--upgrade`,
 			});
 
 			$(UPGRADE_LOCATIONS[upgradeCategory]).append(button);
