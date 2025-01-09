@@ -60,7 +60,6 @@ button {
 	padding: 4px;
 	background: #bbbbbb;
 	position: fixed;
-	z-index: -1;
 	text-align: center;
 }
 
