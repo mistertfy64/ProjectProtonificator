@@ -80,3 +80,11 @@ button {
 #levelling {
 	text-align: center;
 }
+
+.display-image {
+	position:absolute;
+	left: 10vw;
+	top: 15vw;
+	width: 80vw;
+	z-index: -99;
+}
