@@ -137,14 +137,16 @@ function updateHTML() {
 		formatNumber(game.currencies.experiencePoints)
 	);
 
-	const toNextLevel = new Decimal(4).pow(
-		Decimal.max(game.currencies.experiencePoints, new Decimal("1"))
-			.log(4)
-			.floor()
-			.add(1)
-	);
+	const levellingLevel = Decimal.max(
+		game.currencies.experiencePoints,
+		new Decimal("1")
+	)
+		.log(4)
+		.floor();
+	const toNextLevel = new Decimal(4).pow(levellingLevel.add(1));
 	const progressToNextLevel =
 		game.currencies.experiencePoints.div(toNextLevel).toNumber() * 100;
+	$("#levelling-level").text(formatNumber(levellingLevel));
 	$("#experience-points-to-next-level").text(formatNumber(toNextLevel));
 	/* FIXME: make gradient not rise down, but instantly go to #ffffff. */
 	$("#levelling__bar").css(
