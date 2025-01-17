@@ -15,7 +15,12 @@
 <body>
   <div class="layout">
     <div class="overhead-panel">
-      ProjectProtonificator
+      <div class="nameAndCredit">
+       <!--game name-->
+        <h3>Protonificator™ | <img src="./assets/images/github.png" width="auto" height="20"> <a href="https://github.com/mistertfy64/ProjectProtonificator">Source Code</a> | Created by <a href="https://mistertfy64.com">mistertfy64</a> and others.</h3>
+      </div>
+      
+      <!--currency display-->
       <div class="currency-container-container">
         <div class="currency-container">
           <img title="Electricity" src="./assets/images/electricity.png" width="auto" height="32">
@@ -43,7 +48,15 @@
     
     </div>
     <div class="control_panel">
-    
+      <!-- Generators -->
+      <div id="generators">
+        <button id="generator--particles">
+          Generate Particles
+        </button>
+        <button id="generator--money">
+          Sell Particles for Money
+        </button>
+      </div>
     </div>
     <div class="main_section">
       <div class ="reactor_viewport">
@@ -59,15 +72,6 @@
       <button class="button--menu" onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
       <br>
       <br>
-      <!-- Generators -->
-      <div id="generators">
-        <button id="generator--particles">
-          Generate Particles
-        </button>
-        <button id="generator--money">
-          Sell Particles for Money
-        </button>
-      </div>
       <!-- Upgrades -->
       <div id="upgrades">
         Upgrades
@@ -114,12 +118,6 @@
         <div id="upgrades--levelling">
 
         </div>
-      </div>
-      <br>
-      <footer>
-        <a href="https://github.com/mistertfy64/ProjectProtonificator">Source Code</a> | Created by <a href="https://mistertfy64.com">mistertfy64</a> and others.
-      </footer>
-    </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>

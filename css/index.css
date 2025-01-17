@@ -51,10 +51,14 @@ button {
 .button--upgrade {
 	width: 20vw;
 }
-
+.nameAndCredit{
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
 .currency-container {
 	display: flex;
-	height: 36px;
+	text-align: center;
 	align-items: center;
 	min-width: fit-content;
 	padding: 0 16px;
@@ -62,6 +66,8 @@ button {
 
 .currency-container-container {
 	display: flex;
+	text-align: center;
+	align-items: center;
 	justify-content: center;
 	flex-direction: row;
 }
@@ -71,10 +77,7 @@ button {
 	background-color: #e6e6e6; /* Light red */
 	border-bottom: 2px solid #000000;
 	display: flex;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
-	padding: 20px; /* Increased padding for more height */
+	padding: 1px; /* Increased padding for more height */
 	height: 100%;
 	min-height: 100px; /* Ensure top section has reasonable height */
 }
@@ -122,4 +125,26 @@ button {
 	padding: 20px; /* Increased padding for more height */
 	height: 100%;
 	min-height: 120px; /* Increased height for bottom section */
+}
+
+#content {
+	text-align: center;
+}
+
+#levelling__bar {
+	width: 50vw;
+	height: 32px;
+	border-color: var(--color-levelling);
+	border: 2px;
+	border-style: solid;
+	margin: auto;
+	position: relative;
+}
+
+#levelling {
+	text-align: center;
+}
+
+.bobo_credit {
+	text-align: center
 }
