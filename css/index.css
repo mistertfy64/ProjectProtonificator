@@ -9,6 +9,18 @@ body {
 	font-family: "JetBrains Mono", monospace;
 }
 
+.layout {
+	display: grid;
+	grid-template-rows: 100px 1fr 150px; /* Top section, middle (resizable), bottom section with more height */
+	grid-template-columns: 250px 1fr; /* Left panel, dynamic center */
+	grid-template-areas:
+		"banner banner"
+		"upgrade animation"
+		"upgrade control";
+	height: 100%;
+	width: 100%;
+}
+
 button {
 	font-family: "JetBrains Mono", monospace;
 	border: 2px solid #000000;
@@ -55,28 +67,59 @@ button {
 }
 
 .overhead-panel {
-	width: 100%;
-	min-height: fit-content;
-	padding: 4px;
-	background: #bbbbbb;
-	position: fixed;
+	grid-area: banner;
+	background-color: #e6e6e6; /* Light red */
+	border-bottom: 2px solid #000000;
+	display: flex;
 	text-align: center;
+	justify-content: center;
+	align-items: center;
+	padding: 20px; /* Increased padding for more height */
+	height: 100%;
+	min-height: 100px; /* Ensure top section has reasonable height */
 }
 
-#content {
-	text-align: center;
+.upgrade_panel {
+	grid-area: upgrade;
+	background-color: #cce5ff; /* Light blue */
+	border-right: 2px solid #ccc;
+	padding: 10px;
+	height: 100%; /* Stretch the left section to fill remaining height */
+	overflow: auto; /* Prevent overflow */
 }
 
-#levelling__bar {
-	width: 50vw;
-	height: 32px;
-	border-color: var(--color-levelling);
-	border: 2px;
-	border-style: solid;
-	margin: auto;
+.main_section {
+	grid-area: animation;
+	background-color: #d5f5e3; /* Light green */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: relative;
+	padding: 10px;
+	overflow: hidden; /* Prevent overflow */
 }
 
-#levelling {
-	text-align: center;
+/* Aspect Ratio Box */
+.reactor_viewport {
+	width: 100%;
+	max-width: calc(74vh * 16 / 9); /* Maintain 16:9 ratio */
+	aspect-ratio: 16 / 9;
+	background-color: #ffffff; /* Light yellow */
+	border: 2px solid #0277bd;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Bottom Section (Control Panel) */
+.control_panel {
+	grid-area: control;
+	background-color: #f7dc6f; /* Light orange */
+	border-top: 2px solid #ccc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px; /* Increased padding for more height */
+	height: 100%;
+	min-height: 120px; /* Increased height for bottom section */
 }

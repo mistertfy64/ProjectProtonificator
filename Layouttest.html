@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Incremental Layout</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full height for body */
+        html, body {
+            height: 100%;
+        }
+
+        /* Grid layout for the main container */
+        .layout {
+            display: grid;
+            grid-template-rows: 100px 1fr 150px; /* Top section, middle (resizable), bottom section with more height */
+            grid-template-columns: 250px 1fr; /* Left panel, dynamic center */
+            grid-template-areas:
+                "banner banner"
+                "upgrade animation"
+                "upgrade control";
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Top Section (Banner) */
+        .banner {
+            grid-area: banner;
+            background-color: #ffcccc; /* Light red */
+            border-bottom: 2px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Increased padding for more height */
+            height: 100%;
+            min-height: 100px; /* Ensure top section has reasonable height */
+        }
+
+        /* Left Section (Upgrade Panel) */
+        .upgrade {
+            grid-area: upgrade;
+            background-color: #cce5ff; /* Light blue */
+            border-right: 2px solid #ccc;
+            padding: 10px;
+            height: 100%; /* Stretch the left section to fill remaining height */
+            overflow: auto; /* Prevent overflow */
+        }
+
+        /* Middle Section (Animation Display) */
+        .animation {
+            grid-area: animation;
+            background-color: #d5f5e3; /* Light green */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 10px;
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        /* Aspect Ratio Box */
+        .animation-content {
+            width: 100%;
+            max-width: calc(74vh * 16 / 9); /* Maintain 16:9 ratio */
+            aspect-ratio: 16 / 9;
+            background-color: #ffffff; /* Light yellow */
+            border: 2px solid #0277bd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Bottom Section (Control Panel) */
+        .control {
+            grid-area: control;
+            background-color: #f7dc6f; /* Light orange */
+            border-top: 2px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Increased padding for more height */
+            height: 100%;
+            min-height: 120px; /* Increased height for bottom section */
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <!-- Top Section -->
+        <div class="banner">
+            <p>Top Section (Banner/Currency Display)</p>
+        </div>
+
+        <!-- Left Section -->
+        <div class="upgrade">
+            <p>Left Section (Upgrade Panel)</p>
+        </div>
+
+        <!-- Middle Section -->
+        <div class="animation">
+            <div class="animation-content">
+                <p>Middle Section (Animation Display)</p>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="control">
+            <p>Bottom Section (Control Panel)</p>
+        </div>
+    </div>
+</body>
+</html>
