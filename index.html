@@ -15,9 +15,10 @@
 <body>
   <div class="layout">
     <div class="overhead-panel">
+      <img id="overheadPanelBackground" src="./assets/images/overheadPanel.png">
       <div class="nameAndCredit">
        <!--game name-->
-        <h3>Protonificator™ | <img src="./assets/images/github.png" width="auto" height="20"> <a href="https://github.com/mistertfy64/ProjectProtonificator">Source Code</a> | Created by <a href="https://mistertfy64.com">mistertfy64</a> and others.</h3>
+        <h3 style="position: relative; z-index: 1;">Protonificator™ | <img src="./assets/images/github.png" width="auto" height="20"> <a href="https://github.com/mistertfy64/ProjectProtonificator">Source Code</a> | Created by <a href="https://mistertfy64.com">mistertfy64</a> and others.</h3>
       </div>
       
       <!--currency display-->
@@ -60,10 +61,12 @@
     </div>
     <div class="main_section">
       <div class ="reactor_viewport">
-
+        <img id="Background" src="./assets/images/reactorViewportBackground.png">
+        <img id="reactorShadow" src="./assets/images/reactorShadows.png">
+        <img id="reactors" src="./assets/images/reactors.png">
+        <img id="reactorStatus" src="./assets/images/reactorsStatusLight.png">
       </div>
     </div>
-    <br><br><br><br>
     <div id="content">
       <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
       <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
