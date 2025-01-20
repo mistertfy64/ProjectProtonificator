@@ -15,12 +15,12 @@
 <body>
   <div class="layout">
     <div class="overhead-panel">
-      <img id="overheadPanelBackground" src="./assets/images/overheadPanel.png">
+      <!-- <img id="overheadPanelBackground" src="./assets/images/overheadPanel.png"> -->
       <div class="nameAndCredit">
-       <!--game name-->
+        <!--game name-->
         <h3 style="position: relative; z-index: 1;">Protonificator™ | <img src="./assets/images/github.png" width="auto" height="20"> <a href="https://github.com/mistertfy64/ProjectProtonificator">Source Code</a> | Created by <a href="https://mistertfy64.com">mistertfy64</a> and others.</h3>
       </div>
-      
+
       <!--currency display-->
       <div class="currency-container-container">
         <div class="currency-container">
@@ -45,8 +45,66 @@
         </div>
       </div>
     </div>
+
     <div class="upgrade_panel">
-    
+      <div id="content">
+        <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
+        <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
+        <button class="button--menu button--overload" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
+        <button class="button--menu button--levelling" onclick="changeScreenTo(`levelling`)" id="switch-to-levelling">Levelling</button>
+        <button class="button--menu" onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
+        <br>
+        <br>
+        <!-- Upgrades -->
+        <div id="upgrades">
+          Upgrades
+          <br>
+        </div>
+        <!-- Settings -->
+        <div id="settings">
+          Settings
+          <br>
+          <button onclick="exportSaveData()">
+            Export Save Data
+          </button>
+          <button onclick="importSaveData()">
+            Import Save Data
+          </button>
+        </div>
+        <!-- Overload -->
+        <div id="overload">
+          <button onclick="performOverload()" class="button--overload">Overload your generator.
+            <br>
+            This operation destroys your generator,
+            resetting s-upgrades and p-upgrades
+            (except for upgrade po),
+            <br>
+            electricity, money, and particles.
+            <br>
+            As a result, this operation will earn you <span id="gain-on-overload"></span> Overloaded Generator Scraps.
+          </button>
+          <div id="upgrades--overloaded">
+
+          </div>
+        </div>
+        <!-- Levelling -->
+        <div id="levelling">
+          Levelling Level <span id="levelling-level"></span>
+          <br>
+          <span id="currency--experience-points">0</span> experience points
+          <br>
+          <span id="experience-points-to-next-level">10</span> experience points for next level
+          <div id="levelling__bar">
+
+
+          </div>
+          <button onclick="addExperiencePoints()">Get Experience Points</button>
+          <div id="upgrades--levelling">
+
+          </div>
+
+        </div>
+      </div>
     </div>
     <div class="control_panel">
       <!-- Generators -->
@@ -60,74 +118,17 @@
       </div>
     </div>
     <div class="main_section">
-      <div class ="reactor_viewport">
+      <div class="reactor_viewport">
         <img id="Background" src="./assets/images/reactorViewportBackground.png">
         <img id="reactorShadow" src="./assets/images/reactorShadows.png">
         <img id="reactors" src="./assets/images/reactors.png">
         <img id="reactorStatus" src="./assets/images/reactorsStatusLight.png">
       </div>
     </div>
-    <div id="content">
-      <button class="button--menu" onclick="changeScreenTo(`generators`)" id="switch-to-generators">Generators</button>
-      <button class="button--menu" onclick="changeScreenTo(`upgrades`)" id="switch-to-upgrades">Upgrades</button>
-      <button class="button--menu button--overload" onclick="changeScreenTo(`overload`)" id="switch-to-overload">Overload</button>
-      <button class="button--menu button--levelling" onclick="changeScreenTo(`levelling`)" id="switch-to-levelling">Levelling</button>
-      <button class="button--menu" onclick="changeScreenTo(`settings`)" id="switch-to-settings">Settings</button>
-      <br>
-      <br>
-      <!-- Upgrades -->
-      <div id="upgrades">
-        Upgrades
-        <br>
-      </div>
-      <!-- Settings -->
-      <div id="settings">
-        Settings
-        <br>
-        <button onclick="exportSaveData()">
-          Export Save Data
-        </button>
-        <button onclick="importSaveData()">
-          Import Save Data
-        </button>
-      </div>
-      <!-- Overload -->
-      <div id="overload">
-        <button onclick="performOverload()" class="button--overload">Overload your generator.
-          <br>
-          This operation destroys your generator,
-          resetting s-upgrades and p-upgrades
-          (except for upgrade po),
-          <br>
-          electricity, money, and particles.
-          <br>
-          As a result, this operation will earn you <span id="gain-on-overload"></span> Overloaded Generator Scraps.
-        </button>
-        <div id="upgrades--overloaded">
 
-        </div>
-      </div>
-      <!-- Levelling -->
-      <div id="levelling">
-        Levelling Level <span id="levelling-level"></span>
-        <br>
-        <span id="currency--experience-points">0</span> experience points
-        <br>
-        <span id="experience-points-to-next-level">10</span> experience points for next level
-        <div id="levelling__bar">
-
-
-        </div>
-        <button onclick="addExperiencePoints()">Get Experience Points</button>
-        <div id="upgrades--levelling">
-
-        </div>
-
-      </div>
-    </div>
     <div>
       <img class="display-image" title="display panel" src="./assets/images/Overview_Pane.png" width=1000 height=562.5>
-      <img class="display-image"  title="dark shadow" src="./assets/images/dark.png" width=1000 height=562.5 >
+      <img class="display-image" title="dark shadow" src="./assets/images/dark.png" width=1000 height=562.5>
     </div>
     <br>
     <footer>

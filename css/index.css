@@ -48,10 +48,7 @@ button {
 	color: var(--color-levelling);
 }
 
-.button--upgrade {
-	width: 20vw;
-}
-.nameAndCredit{
+.nameAndCredit {
 	display: flex;
 	align-items: center;
 	text-align: center;
@@ -80,13 +77,14 @@ button {
 	padding: 1px; /* Increased padding for more height */
 	height: 100%;
 	min-height: 100px; /* Ensure top section has reasonable height */
-
+	flex-direction: column;
+	align-items: center;
 }
-#overheadPanelBackground{
+#overheadPanelBackground {
 	object-fit: cover;
 	width: 100%;
 	height: auto;
-    position: absolute; /* Ensures it stays within the parent viewport */
+	position: absolute; /* Ensures it stays within the parent viewport */
 }
 
 .upgrade_panel {
@@ -123,27 +121,27 @@ button {
 }
 #Background {
 	object-fit: contain; /* Ensures the entire image fits within the viewport */
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    position: absolute; /* Ensures it stays within the parent viewport */
+	width: 100%; /* Full width of the container */
+	height: 100%; /* Full height of the container */
+	position: absolute; /* Ensures it stays within the parent viewport */
 }
 #reactorShadow {
 	object-fit: contain; /* Ensures the entire image fits within the viewport */
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    position: absolute; /* Ensures it stays within the parent viewport */
+	width: 100%; /* Full width of the container */
+	height: 100%; /* Full height of the container */
+	position: absolute; /* Ensures it stays within the parent viewport */
 }
 #reactors {
 	object-fit: contain; /* Ensures the entire image fits within the viewport */
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    position: absolute; /* Ensures it stays within the parent viewport */
+	width: 100%; /* Full width of the container */
+	height: 100%; /* Full height of the container */
+	position: absolute; /* Ensures it stays within the parent viewport */
 }
 #reactorStatus {
 	object-fit: contain; /* Ensures the entire image fits within the viewport */
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    position: absolute; /* Ensures it stays within the parent viewport */
+	width: 100%; /* Full width of the container */
+	height: 100%; /* Full height of the container */
+	position: absolute; /* Ensures it stays within the parent viewport */
 }
 
 /* Bottom Section (Control Panel) */
@@ -177,16 +175,14 @@ button {
 	text-align: center;
 }
 
-
 .bobo_credit {
-	text-align: center
+	text-align: center;
 }
 
 .display-image {
-	position:absolute;
+	position: absolute;
 	left: 10vw;
 	top: 15vw;
 	width: 80vw;
 	z-index: -99;
-
 }
