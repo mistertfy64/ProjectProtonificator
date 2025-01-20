@@ -92,7 +92,9 @@ button {
 	background-color: #cce5ff; /* Light blue */
 	border-right: 2px solid #ccc;
 	padding: 10px;
-	height: 100%; /* Stretch the left section to fill remaining height */
+	height: calc(
+		100vh - 100px
+	); /* Stretch the left section to fill remaining height */
 	overflow: auto; /* Prevent overflow */
 }
 
@@ -104,12 +106,14 @@ button {
 	align-items: center;
 	position: relative;
 	padding: 10px;
+	max-height: fit-content;
 	overflow: hidden; /* Prevent overflow */
 }
 
 /* Aspect Ratio Box */
 .reactor_viewport {
 	width: 100%;
+	height: 100%;
 	max-width: calc(74vh * 16 / 9); /* Maintain 16:9 ratio */
 	aspect-ratio: 16 / 9;
 	background-color: #ffffff; /* Light yellow */
@@ -152,13 +156,14 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px; /* Increased padding for more height */
+	padding: 0px 20px 0 20px; /* Increased padding for more height */
 	height: 100%;
 	min-height: 120px; /* Increased height for bottom section */
 }
 
 #content {
 	text-align: center;
+	height: calc(100% - 100px);
 }
 
 #levelling__bar {
