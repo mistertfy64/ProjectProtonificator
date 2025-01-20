@@ -9,9 +9,10 @@ body {
 	font-family: "JetBrains Mono", monospace;
 }
 
+/* TODO: see whats up with the (replaced) 1fr on rows */
 .layout {
 	display: grid;
-	grid-template-rows: 100px 1fr 150px; /* Top section, middle (resizable), bottom section with more height */
+	grid-template-rows: 100px calc(100% - 425px) 150px; /* Top section, middle (resizable), bottom section with more height */
 	grid-template-columns: 250px 1fr; /* Left panel, dynamic center */
 	grid-template-areas:
 		"banner banner"
