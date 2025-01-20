@@ -16,7 +16,7 @@ body {
 	grid-template-areas:
 		"banner banner"
 		"upgrade animation"
-		"upgrade control";
+		"credits control";
 	height: 100%;
 	width: 100%;
 }
@@ -190,4 +190,13 @@ button {
 	top: 15vw;
 	width: 80vw;
 	z-index: -99;
+}
+
+.credits {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #e9a514aa;
+	grid-area: credits;
 }
