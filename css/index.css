@@ -198,6 +198,6 @@ button {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-color: #e9a514aa;
+	background-color: #e9a514;
 	grid-area: credits;
 }
