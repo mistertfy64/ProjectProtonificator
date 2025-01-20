@@ -13,7 +13,7 @@ body {
 /* TODO: see whats up with the (replaced) 1fr on rows */
 .layout {
 	display: grid;
-	grid-template-rows: 100px calc(100% - 425px) 150px; /* Top section, middle (resizable), bottom section with more height */
+	grid-template-rows: 100px calc(100% - 425px) 152px; /* Top section, middle (resizable), bottom section with more height */
 	grid-template-columns: 250px 1fr; /* Left panel, dynamic center */
 	grid-template-areas:
 		"banner banner"
@@ -101,29 +101,25 @@ button {
 }
 
 .main_section {
-	grid-area: animation;
-	background-color: #d5f5e3; /* Light green */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	padding: 10px;
-	max-height: fit-content;
-	overflow: hidden; /* Prevent overflow */
+    height: 100%;
+    width: 100%; /* Ensure it spans the full width */
+    background-color: #d5f5e3; /* Light green */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Prevent overflow */
+    grid-area: animation; /* This links it to the correct grid area */
 }
 
 /* Aspect Ratio Box */
 .reactor_viewport {
-	width: 100%;
-	height: 100%;
-	max-width: calc(74vh * 16 / 9); /* Maintain 16:9 ratio */
-	aspect-ratio: 16 / 9;
-	background-color: #ffffff; /* Light yellow */
-	border: 2px solid #000000;
-	border-width: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	position: relative;
+	width: 90%; /* Scale relative to the white area */
+	max-width: 1200px; /* Prevent viewport from getting too large */
+	aspect-ratio: 16 / 9; /* Maintain 16:9 ratio */
+	background-color: black; /* Optional background to distinguish the viewport */
+	overflow: hidden; /* Ensure no image overlaps outside */
 }
 #Background {
 	object-fit: contain; /* Ensures the entire image fits within the viewport */
