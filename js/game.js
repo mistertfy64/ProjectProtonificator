@@ -193,10 +193,16 @@ function updateUpgradeButton(key) {
 
 function setParticleButtonState(state) {
 	game.generators.particle.pressed = state;
+	if (state == true) {
+		$("#beam").animate({ opacity: 1 }, 0);
+	} else {
+		$("#beam").animate({ opacity: 0 }, 0);
+	}
 }
 
 function setMoneyButtonState(state) {
 	game.generators.money.pressed = state;
+	$("#beam").animate({ opacity: 0 }, 0);
 }
 
 function sellParticles() {

@@ -29,12 +29,14 @@ function initialize() {
  */
 function initializeEvents() {
 	$("#generator--particles").on("mousedown", () => {
+		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
 		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("mouseup", () => {
 		setParticleButtonState(false);
 	});
 	$("#generator--particles").on("touchstart", () => {
+		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
 		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("touchend", () => {

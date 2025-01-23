@@ -13,7 +13,7 @@ body {
 /* TODO: see whats up with the (replaced) 1fr on rows */
 .layout {
 	display: grid;
-	grid-template-rows: 100px calc(100% - 425px) 152px; 
+	grid-template-rows: 100px calc(100% - 425px) 152px;
 	grid-template-columns: 250px 1fr;
 	grid-template-areas:
 		"banner banner"
@@ -73,11 +73,11 @@ button {
 
 .overhead-panel {
 	grid-area: banner;
-	background-color: #a3a3a3; 
+	background-color: #a3a3a3;
 	display: flex;
-	padding: 1px; 
+	padding: 1px;
 	height: 100%;
-	min-height: 100px; 
+	min-height: 100px;
 	flex-direction: column;
 	align-items: center;
 }
@@ -85,45 +85,43 @@ button {
 	object-fit: cover;
 	width: 100%;
 	height: auto;
-	position: absolute; 
+	position: absolute;
 }
 
 .upgrade_panel {
 	grid-area: upgrade;
-	background-color: #8a8a8a; 
+	background-color: #8a8a8a;
 	border-right: 2px solid #ccc;
 	padding: 10px;
-	height: calc(
-		100vh - 100px
-	);
+	height: calc(100vh - 100px);
 	overflow: auto;
 }
 .upgrade_panel::-webkit-scrollbar {
 	width: 12px;
-  }
-  
-  .upgrade_panel::-webkit-scrollbar-track {
+}
+
+.upgrade_panel::-webkit-scrollbar-track {
 	background: #424242;
-  }
-  
-  .upgrade_panel::-webkit-scrollbar-thumb {
+}
+
+.upgrade_panel::-webkit-scrollbar-thumb {
 	background-color: #666666;
-  }
-  
-  .upgrade_panel::-webkit-scrollbar-thumb:hover {
+}
+
+.upgrade_panel::-webkit-scrollbar-thumb:hover {
 	background-color: #6a6a6a;
-  }
+}
 
 .main_section {
-    height: 100%;
-    width: 100%; 
-    background-color: #d5f5e3; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden; /* Prevent overflow */
-    grid-area: animation; /* This links it to the correct grid area */
+	height: 100%;
+	width: 100%;
+	background-color: #d5f5e3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden; /* Prevent overflow */
+	grid-area: animation; /* This links it to the correct grid area */
 }
 
 /* Aspect Ratio Box */
@@ -136,32 +134,28 @@ button {
 	overflow: hidden; /* Ensure no image overlaps outside */
 }
 #Background {
-	object-fit: contain; 
-	width: 100%; 
-	height: 100%; 
-	position: absolute; 
-	
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 #reactorShadow {
-	object-fit: contain; 
-	width: 100%; 
-	height: 100%; 
-	position: absolute; 
-	
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 #reactors {
-	object-fit: contain; 
-	width: 100%; 
-	height: 100%; 
-	position: absolute; 
-	
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 #reactorStatus {
-	object-fit: contain; 
-	width: 100%; 
-	height: 100%; 
-	position: absolute; 
-	
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 
 /* Bottom Section (Control Panel) */
@@ -218,4 +212,12 @@ button {
 	flex-direction: column;
 	background-color: #e9a514;
 	grid-area: credits;
+}
+
+#beam {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	position: absolute;
 }
