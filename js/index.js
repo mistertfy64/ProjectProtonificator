@@ -33,6 +33,8 @@ function initializeEvents() {
 	$("#generator--particles").on("mousedown", () => {
 		buttonPressed = true;
 		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
+		$("#dark-overlay").animate({ opacity: 0 }, BUTTON_DELAY);
+
 		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("mouseup", () => {
@@ -42,6 +44,8 @@ function initializeEvents() {
 	$("#generator--particles").on("touchstart", () => {
 		buttonPressed = true;
 		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
+		$("#dark-overlay").animate({ opacity: 0 }, BUTTON_DELAY);
+
 		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("touchend", () => {

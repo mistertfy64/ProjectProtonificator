@@ -195,9 +195,11 @@ function setParticleButtonState(state) {
 	if (buttonPressed && state == true) {
 		game.generators.particle.pressed = true;
 		$("#beam").animate({ opacity: 1 }, 0);
+		$("#dark-overlay").animate({ opacity: 0 }, 0);
 	} else {
 		game.generators.particle.pressed = false;
 		$("#beam").animate({ opacity: 0 }, 300);
+		$("#dark-overlay").animate({ opacity: 1 }, 300);
 	}
 }
 
