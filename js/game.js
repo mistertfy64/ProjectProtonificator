@@ -202,7 +202,6 @@ function setParticleButtonState(state) {
 
 function setMoneyButtonState(state) {
 	game.generators.money.pressed = state;
-	$("#beam").animate({ opacity: 0 }, 0);
 }
 
 function sellParticles() {
