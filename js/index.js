@@ -1,4 +1,6 @@
 const BUTTON_DELAY = 3000;
+// TODO: Move this variable somewhere more organized.
+let buttonPressed = false;
 
 const UPGRADE_LOCATIONS = {
 	"speed": "#upgrades",
@@ -29,17 +31,21 @@ function initialize() {
  */
 function initializeEvents() {
 	$("#generator--particles").on("mousedown", () => {
+		buttonPressed = true;
 		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
 		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("mouseup", () => {
+		buttonPressed = false;
 		setParticleButtonState(false);
 	});
 	$("#generator--particles").on("touchstart", () => {
+		buttonPressed = true;
 		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
 		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("touchend", () => {
+		buttonPressed = false;
 		setParticleButtonState(false);
 	});
 	// ...

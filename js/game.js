@@ -192,11 +192,12 @@ function updateUpgradeButton(key) {
 }
 
 function setParticleButtonState(state) {
-	game.generators.particle.pressed = state;
-	if (state == true) {
+	if (buttonPressed && state == true) {
+		game.generators.particle.pressed = true;
 		$("#beam").animate({ opacity: 1 }, 0);
 	} else {
-		$("#beam").animate({ opacity: 0 }, 0);
+		game.generators.particle.pressed = false;
+		$("#beam").animate({ opacity: 0 }, 300);
 	}
 }
 
