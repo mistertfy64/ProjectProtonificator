@@ -1,3 +1,5 @@
+const BUTTON_DELAY = 3000;
+
 const UPGRADE_LOCATIONS = {
 	"speed": "#upgrades",
 	"particles": "#upgrades",
@@ -27,13 +29,13 @@ function initialize() {
  */
 function initializeEvents() {
 	$("#generator--particles").on("mousedown", () => {
-		setParticleButtonState(true);
+		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("mouseup", () => {
 		setParticleButtonState(false);
 	});
 	$("#generator--particles").on("touchstart", () => {
-		setParticleButtonState(true);
+		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("touchend", () => {
 		setParticleButtonState(false);
