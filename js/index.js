@@ -41,17 +41,8 @@ function initializeEvents() {
 		setParticleButtonState(false);
 	});
 	// ...
-	$("#generator--money").on("mousedown", () => {
-		setMoneyButtonState(true);
-	});
-	$("#generator--money").on("mouseup", () => {
-		setMoneyButtonState(false);
-	});
-	$("#generator--money").on("touchstart", () => {
-		setMoneyButtonState(true);
-	});
-	$("#generator--money").on("touchend", () => {
-		setMoneyButtonState(false);
+	$("#generator--money").on("click", () => {
+		sellParticles();
 	});
 }
 

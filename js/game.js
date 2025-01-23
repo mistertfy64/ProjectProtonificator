@@ -58,15 +58,15 @@ function updateVariables(deltaTime) {
 			getElectricityGeneration(tickspeed, deltaTimeMultiplier)
 		);
 	}
-	/* Takes care of the money generator */
-	if (game.generators.money.pressed) {
-		if (game.currencies.particles.gt(ZERO)) {
-			game.currencies.money = game.currencies.money.add(
-				game.currencies.particles
-			);
-			game.currencies.particles = ZERO;
-		}
-	}
+	// /* Takes care of the money generator */
+	// if (game.generators.money.pressed) {
+	// 	if (game.currencies.particles.gt(ZERO)) {
+	// 		game.currencies.money = game.currencies.money.add(
+	// 			game.currencies.particles
+	// 		);
+	// 		game.currencies.particles = ZERO;
+	// 	}
+	// }
 }
 
 function updateHTML() {
@@ -197,4 +197,14 @@ function setParticleButtonState(state) {
 
 function setMoneyButtonState(state) {
 	game.generators.money.pressed = state;
+}
+
+function sellParticles() {
+	/* Takes care of the money generator */
+	if (game.currencies.particles.gt(ZERO)) {
+		game.currencies.money = game.currencies.money.add(
+			game.currencies.particles
+		);
+		game.currencies.particles = ZERO;
+	}
 }
