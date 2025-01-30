@@ -34,23 +34,31 @@ function initializeEvents() {
 		buttonPressed = true;
 		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
 		$("#dark-overlay").animate({ opacity: 0 }, BUTTON_DELAY);
-
+		$("#generator--particles").attr(
+			"src",
+			"./assets/images/genbuttonhold.png"
+		);
 		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("mouseup", () => {
 		buttonPressed = false;
 		setParticleButtonState(false);
+		$("#generator--particles").attr("src", "./assets/images/genbutton.png");
 	});
 	$("#generator--particles").on("touchstart", () => {
 		buttonPressed = true;
 		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
 		$("#dark-overlay").animate({ opacity: 0 }, BUTTON_DELAY);
-
+		$("#generator--particles").attr(
+			"src",
+			"./assets/images/genbuttonhold.png"
+		);
 		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("touchend", () => {
 		buttonPressed = false;
 		setParticleButtonState(false);
+		$("#generator--particles").attr("src", "./assets/images/genbutton.png");
 	});
 	// ...
 	$("#generator--money").on("click", () => {
