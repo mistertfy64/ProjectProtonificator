@@ -1,5 +1,5 @@
 function changeScreenTo(newScreen) {
-	$("#generators").hide(0);
+	// $("#generators").hide(0);
 	$("#upgrades").hide(0);
 	$("#settings").hide(0);
 	$("#overload").hide(0);

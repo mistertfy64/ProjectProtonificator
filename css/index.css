@@ -7,6 +7,20 @@
 body {
 	margin: 0;
 	font-family: "JetBrains Mono", monospace;
+	overflow: hidden; /** TODO: This was lazily implemented, idk how to fix anymore... **/
+}
+
+/* TODO: see whats up with the (replaced) 1fr on rows */
+.layout {
+	display: grid;
+	grid-template-rows: 100px calc(100% - 425px) 152px;
+	grid-template-columns: 250px 1fr;
+	grid-template-areas:
+		"banner banner"
+		"upgrade animation"
+		"credits control";
+	height: 100%;
+	width: 100%;
 }
 
 button {
@@ -36,8 +50,11 @@ button {
 	color: var(--color-levelling);
 }
 
-.button--upgrade {
-	width: 20vw;
+
+.nameAndCredit {
+	display: flex;
+	align-items: center;
+	text-align: center;
 }
 
 .currency-container {
@@ -55,16 +72,113 @@ button {
 }
 
 .overhead-panel {
+
+	grid-area: banner;
+	background-color: #a3a3a3;
+	display: flex;
+	padding: 1px;
+	height: 100%;
+	min-height: 100px;
+	flex-direction: column;
+	align-items: center;
+}
+#overheadPanelBackground {
+	object-fit: cover;
 	width: 100%;
-	min-height: fit-content;
-	padding: 4px;
-	background: #bbbbbb;
-	position: fixed;
-	text-align: center;
+	height: auto;
+	position: absolute;
+}
+
+.upgrade_panel {
+	grid-area: upgrade;
+	background-color: #8a8a8a;
+	border-right: 2px solid #ccc;
+	padding: 10px;
+	height: calc(100vh - 100px);
+	overflow: auto;
+}
+.upgrade_panel::-webkit-scrollbar {
+	width: 12px;
+}
+
+.upgrade_panel::-webkit-scrollbar-track {
+	background: #424242;
+}
+
+.upgrade_panel::-webkit-scrollbar-thumb {
+	background-color: #666666;
+}
+
+.upgrade_panel::-webkit-scrollbar-thumb:hover {
+	background-color: #6a6a6a;
+}
+
+.main_section {
+	height: 100%;
+	width: 100%;
+	background-color: #000000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden; /* Prevent overflow */
+	grid-area: animation; /* This links it to the correct grid area */
+}
+
+/* Aspect Ratio Box */
+.reactor_viewport {
+	position: relative;
+	width: 90%; /* Scale relative to the white area */
+	max-width: 1200px; /* Prevent viewport from getting too large */
+	aspect-ratio: 16 / 9; /* Maintain 16:9 ratio */
+	background-color: black; /* Optional background to distinguish the viewport */
+	overflow: hidden; /* Ensure no image overlaps outside */
+}
+#Background {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+#reactorShadow {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+#reactors {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+#reactorStatus {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+/* Bottom Section (Control Panel) */
+.control_panel {
+	grid-area: control;
+	background-color: #a3a3a3; /* Light orange */
+	border-top: 2px solid #ccc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 20px 0 20px; /* Increased padding for more height */
+	height: 100%;
+	min-height: 120px; /* Increased height for bottom section */
+
+}
+.generator--particles {
+	justify-content: center;
 }
 
 #content {
 	text-align: center;
+	height: calc(100% - 100px);
 }
 
 #levelling__bar {
@@ -80,3 +194,64 @@ button {
 #levelling {
 	text-align: center;
 }
+
+
+.bobo_credit {
+	text-align: center;
+}
+
+.display-image {
+	position: absolute;
+	left: 10vw;
+	top: 15vw;
+	width: 80vw;
+	z-index: -99;
+}
+
+.credits {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #e9a514;
+	grid-area: credits;
+}
+
+#beam {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+}
+
+#dark-overlay {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+#generator--money {
+	filter: hue-rotate(270deg);
+}
+
+#generators {
+	text-align: center;
+}
+
+#credits {
+	font-size: 10px;
+}
+
+#button-container {
+	display: flex;
+	justify-content: space-between;
+	width: 30vw;
+}
+
+.button-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+

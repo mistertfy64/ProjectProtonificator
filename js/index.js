@@ -1,3 +1,7 @@
+const BUTTON_DELAY = 3000;
+// TODO: Move this variable somewhere more organized.
+let buttonPressed = false;
+
 const UPGRADE_LOCATIONS = {
 	"speed": "#upgrades",
 	"particles": "#upgrades",
@@ -27,29 +31,56 @@ function initialize() {
  */
 function initializeEvents() {
 	$("#generator--particles").on("mousedown", () => {
-		setParticleButtonState(true);
+		buttonPressed = true;
+		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
+		$("#dark-overlay").animate({ opacity: 0 }, BUTTON_DELAY);
+		$("#generator--particles").attr(
+			"src",
+			"./assets/images/genbuttonhold.png"
+		);
+		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("mouseup", () => {
+		buttonPressed = false;
 		setParticleButtonState(false);
+		$("#generator--particles").attr("src", "./assets/images/genbutton.png");
 	});
 	$("#generator--particles").on("touchstart", () => {
-		setParticleButtonState(true);
+		buttonPressed = true;
+		$("#beam").animate({ opacity: 1 }, BUTTON_DELAY);
+		$("#dark-overlay").animate({ opacity: 0 }, BUTTON_DELAY);
+		$("#generator--particles").attr(
+			"src",
+			"./assets/images/genbuttonhold.png"
+		);
+		setTimeout(() => setParticleButtonState(true), BUTTON_DELAY);
 	});
 	$("#generator--particles").on("touchend", () => {
+		buttonPressed = false;
 		setParticleButtonState(false);
+		$("#generator--particles").attr("src", "./assets/images/genbutton.png");
 	});
 	// ...
-	$("#generator--money").on("mousedown", () => {
-		setMoneyButtonState(true);
-	});
-	$("#generator--money").on("mouseup", () => {
-		setMoneyButtonState(false);
+	$("#generator--money").on("click", () => {
+		sellParticles();
 	});
 	$("#generator--money").on("touchstart", () => {
-		setMoneyButtonState(true);
+		$("#generator--money").attr(
+			"src",
+			"./assets/images/moneybuttonhold.png"
+		);
 	});
 	$("#generator--money").on("touchend", () => {
-		setMoneyButtonState(false);
+		$("#generator--money").attr("src", "./assets/images/moneybutton.png");
+	});
+	$("#generator--money").on("mousedown", () => {
+		$("#generator--money").attr(
+			"src",
+			"./assets/images/moneybuttonhold.png"
+		);
+	});
+	$("#generator--money").on("mouseup", () => {
+		$("#generator--money").attr("src", "./assets/images/moneybutton.png");
 	});
 }
 

@@ -58,15 +58,15 @@ function updateVariables(deltaTime) {
 			getElectricityGeneration(tickspeed, deltaTimeMultiplier)
 		);
 	}
-	/* Takes care of the money generator */
-	if (game.generators.money.pressed) {
-		if (game.currencies.particles.gt(ZERO)) {
-			game.currencies.money = game.currencies.money.add(
-				game.currencies.particles
-			);
-			game.currencies.particles = ZERO;
-		}
-	}
+	// /* Takes care of the money generator */
+	// if (game.generators.money.pressed) {
+	// 	if (game.currencies.particles.gt(ZERO)) {
+	// 		game.currencies.money = game.currencies.money.add(
+	// 			game.currencies.particles
+	// 		);
+	// 		game.currencies.particles = ZERO;
+	// 	}
+	// }
 }
 
 function updateHTML() {
@@ -192,9 +192,27 @@ function updateUpgradeButton(key) {
 }
 
 function setParticleButtonState(state) {
-	game.generators.particle.pressed = state;
+	if (buttonPressed && state == true) {
+		game.generators.particle.pressed = true;
+		$("#beam").animate({ opacity: 1 }, 0);
+		$("#dark-overlay").animate({ opacity: 0 }, 0);
+	} else {
+		game.generators.particle.pressed = false;
+		$("#beam").animate({ opacity: 0 }, 300);
+		$("#dark-overlay").animate({ opacity: 1 }, 300);
+	}
 }
 
 function setMoneyButtonState(state) {
 	game.generators.money.pressed = state;
+}
+
+function sellParticles() {
+	/* Takes care of the money generator */
+	if (game.currencies.particles.gt(ZERO)) {
+		game.currencies.money = game.currencies.money.add(
+			game.currencies.particles
+		);
+		game.currencies.particles = ZERO;
+	}
 }

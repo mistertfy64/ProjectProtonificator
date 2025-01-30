@@ -10,6 +10,7 @@ const LIMIT = new Decimal("1e33");
  * TODO: Fix for -1<x<0.
  */
 function formatNumber(x) {
+	const PRECISION = 1;
 	let negative = false;
 	// handle edge cases
 	if (x.lt(ZERO)) {
@@ -18,7 +19,7 @@ function formatNumber(x) {
 	}
 	const logarithm = x.log10().floor();
 	if (logarithm.lt(new Decimal("0"))) {
-		return x.toPrecision(3);
+		return x.toPrecision(1);
 	}
 	if (x.eq(ZERO)) {
 		return ZERO.toPrecision(3);
@@ -32,6 +33,6 @@ function formatNumber(x) {
 		logarithm.div(3).floor().mul(3)
 	);
 	const index = logarithm.div(3).floor();
-	const digits = x.div(powerToDivideBy).toFixed(3);
+	const digits = x.div(powerToDivideBy).toFixed(PRECISION);
 	return `${negative ? "-" : ""}${digits}${SUFFIXES[index]}`;
 }
