@@ -64,6 +64,24 @@ function initializeEvents() {
 	$("#generator--money").on("click", () => {
 		sellParticles();
 	});
+	$("#generator--money").on("touchstart", () => {
+		$("#generator--money").attr(
+			"src",
+			"./assets/images/moneybuttonhold.png"
+		);
+	});
+	$("#generator--money").on("touchend", () => {
+		$("#generator--money").attr("src", "./assets/images/moneybutton.png");
+	});
+	$("#generator--money").on("mousedown", () => {
+		$("#generator--money").attr(
+			"src",
+			"./assets/images/moneybuttonhold.png"
+		);
+	});
+	$("#generator--money").on("mouseup", () => {
+		$("#generator--money").attr("src", "./assets/images/moneybutton.png");
+	});
 }
 
 /**

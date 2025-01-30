@@ -228,3 +228,7 @@ button {
 	height: 100%;
 	position: absolute;
 }
+
+#generator--money {
+	filter: hue-rotate(270deg);
+}
