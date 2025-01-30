@@ -115,7 +115,7 @@ button {
 .main_section {
 	height: 100%;
 	width: 100%;
-	background-color: #d5f5e3;
+	background-color: #000000;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -161,7 +161,7 @@ button {
 /* Bottom Section (Control Panel) */
 .control_panel {
 	grid-area: control;
-	background-color: #f7dc6f; /* Light orange */
+	background-color: #a3a3a3; /* Light orange */
 	border-top: 2px solid #ccc;
 	display: flex;
 	justify-content: center;
