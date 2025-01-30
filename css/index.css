@@ -240,3 +240,14 @@ button {
 #credits {
 	font-size: 10px;
 }
+
+#button-container {
+	display: flex;
+	justify-content: space-between;
+	width: 30vw;
+}
+
+.button-wrapper {
+	display: flex;
+	flex-direction: column;
+}
