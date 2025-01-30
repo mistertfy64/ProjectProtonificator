@@ -232,3 +232,11 @@ button {
 #generator--money {
 	filter: hue-rotate(270deg);
 }
+
+#generators {
+	text-align: center;
+}
+
+#credits {
+	font-size: 10px;
+}
