@@ -7,7 +7,7 @@
 body {
 	margin: 0;
 	font-family: "JetBrains Mono", monospace;
-	overflow: hidden; /** TODO: This was lazily implemented, idk how to fix anymore... **/
+	overflow-y: scroll;
 }
 
 /* TODO: see whats up with the (replaced) 1fr on rows */
@@ -50,7 +50,6 @@ button {
 	color: var(--color-levelling);
 }
 
-
 .nameAndCredit {
 	display: flex;
 	align-items: center;
@@ -72,7 +71,6 @@ button {
 }
 
 .overhead-panel {
-
 	grid-area: banner;
 	background-color: #a3a3a3;
 	display: flex;
@@ -170,7 +168,6 @@ button {
 	padding: 0px 20px 0 20px; /* Increased padding for more height */
 	height: 100%;
 	min-height: 120px; /* Increased height for bottom section */
-
 }
 .generator--particles {
 	justify-content: center;
@@ -194,7 +191,6 @@ button {
 #levelling {
 	text-align: center;
 }
-
 
 .bobo_credit {
 	text-align: center;
@@ -254,4 +250,3 @@ button {
 	display: flex;
 	flex-direction: column;
 }
-
