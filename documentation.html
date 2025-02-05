@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation | ProjectProtonificator</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "JetBrains Mono", monospace;
+      margin: 0;
+      background-color: #000000;
+      color: #ffffff;
+      overflow-y: auto;
+    }
+
+    a {
+      color: #ffffff !important;
+    }
+
+
+    /* https://stackoverflow.com/a/26245056/11855065 */
+    ol {
+      list-style-type: none;
+      counter-reset: item;
+      margin: 0 16px;
+      padding: 0;
+    }
+
+    ol>li {
+      display: table;
+      counter-increment: item;
+    }
+
+    ol>li:before {
+      content: counters(item, ".") ". ";
+      display: table-cell;
+      padding-right: 0.6em;
+    }
+
+    li ol>li {
+      margin: 0;
+    }
+
+    li ol>li:before {
+      content: counters(item, ".") ". ";
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: center;">ProjectProtonificator</h1>
+  <div style="padding:16px;border:4px solid #ffffff;width:50vw;margin-left:auto;margin-right:auto;">
+    Documentation last updated February 5, 2025.
+    <br>
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#notices">Notices</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gameplay">Gameplay</a></li>
+      <ol>
+        <li><a href="#gameplay__getting-started">Getting Started</a></li>
+        <li><a href="#gameplay__upgrades">Upgrades</a></li>
+        <li><a href="#gameplay__overload">Overload</a></li>
+      </ol>
+      <li><a href="#settings">Settings</a></li>
+      <li><a href="#credits">Credits</a></li>
+      <li><a href="#technical-details">Technical Details</a></li>
+      <ol>
+        <li><a href="#technical-details__source-code">Source Code</a></li>
+        <li><a href="#technical-details__large-numbers">Large Numbers</a></li>
+        <li><a href="#technical-details__html-manipulation">HTML Manipulation</a></li>
+        <li><a href="#technical-details__save-string">Save String</a></li>
+      </ol>
+    </ol>
+    <!-- Notices -->
+    <h2 id="notices">Notices</h2>
+    <div style="width:80%;margin-left:auto;margin-right:auto;color:#ff0000;background-color: #570000;padding:8px;border:4px solid #ff0000">
+      <p style="text-align: center;font-size:24px;margin:0 4px 4px 4px"><b>THIS GAME CURRENTLY DOES NOT HAVE AUTOMATIC PROGRESS SAVING.</b></p>
+      While it was/is planned, mistertfy64 hasn't had the time to actually implement saving in the browser's local storage.
+      To save data, click the "Export Save Data" to save data, and "Import Save Data" to load save data, both of which are located in "Settings" menu.
+    </div>
+    <br>
+    <div style="width:80%;margin-left:auto;margin-right:auto;color:#007fff;background-color: #000757;padding:8px;border:4px solid #007fff">
+      <p style="text-align: center;font-size:24px;margin:0 4px 4px 4px"><b>This project was made as a coursework assignment.</b></p>
+      Due to "tight" time constraints (i.e., 15 weeks), there isn't that enough time to implement many planned features.
+      Especially while the group members are juggling other courses as well. Expect incomplete and/or broken features.
+    </div>
+    <!-- About -->
+    <h2 id="about">About</h2>
+    ProjectProtonificator is an incremental game where the main premise is to have as much money, electricity and particles as possible.
+    Just like other incremental games, after generating currencies, the player can use currencies to purchase "upgrades" to increase the production of the same/similar currencies.
+    <br><br>
+    The game can be played at <a href="https://content.mistertfy64.com/ProjectProtonificator">https://content.mistertfy64.com/ProjectProtonificator</a>.
+    <!-- Basic Gameplay -->
+    <h2 id="gameplay">Gameplay</h2>
+    <h3 id="gameplay__getting-started">Getting Started</h3>
+    When the player first opens the game, the game will present a picture of a "particle-generating" machine, and two buttons below it. While the particle-generating machine is part of the game,
+    it only serves as decoration.
+    <br><br>
+    When nothing is pressed, the game generates electricity at a base rate of 1 electricity per second.
+    <br><br>
+    The red POWER button can be pressed and held down. When the red POWER button is pressed and held down for at least 3 seconds, particles will start generating at a base rate of 1 electricity person if the player has electricity remaining.
+    While particles are being generated, electricity will be deducted (because it was used to generate the particles).
+    <br><br>
+    The green SELL button can be pressed, but not held down. When the green SELL button is pressed, particles will be converted to money at a rate of 1 particle to 1 money.
+    Note that the conversion happens for all generated particles, so there really is no need to hold down the green SELL button.
+    <!-- Upgrades -->
+    <h3 id="gameplay__upgrades">Upgrades</h3>
+    With enough money, upgrades can be bought.
+    Once bought, upgrades are permanent (to an extent) and are immediately activated and require no further action.
+    Upgrades do what the description state.
+    Additionally, upgrades can only be bought up to a certain amount of times as stated by the number behind the slash.
+    <br><br>
+    The first upgrade from the top (Upgrade s1) claims to increase game speed. While that isn't 100% true, it does increase the speed of time as if time really passed faster so more resources are generated.
+    This upgrade does not affect how fast the new numbers display after change, but rather (technically) how fast they change.
+    <br><br>
+    The fourth upgrade from the top's (Upgrade p3) formula is (electricity+level)^0.125+1
+    <br><br>
+    The fifth upgrade from the top's (Upgrade p4) formula is (electricity+level)^0.0875+1
+    <br><br>
+    The sixth upgrade from the top's (Upgrade po) formula unlocks the next feature.
+    <!-- Overload -->
+    <h3 id="gameplay__overload">Overload</h3>
+    Once upgrade po is bought, the player can perform an Overload. Performing an Overload is irreversible and will reset the player's upgrade (except for upgrade po), and currencies for a new currency: overloaded generator scraps.
+    Additional upgrades can be bought using overloaded generator scraps.
+    <br><br>
+    How much overload generator scraps you gain depends on how much money you have at the time of reset.
+    <br><br>
+    The formula for overload generator scrap gain on reset is: (money/10^7)^0.5, but it is important to note that when resetting, but the player needs at least 1 overload generator scrap on reset to be able to reset.
+    <!-- Settings -->
+    <h2 id="settings">Settings</h2>
+    In the settings menu, there are two buttons: "Export Save Data" and "Import Save Data".
+    <br><br>
+    To save your game state, hit "Export Save Data".
+    The game will give a string that the player should store somewhere safe.
+    To load the game state, hit "Import Save Data" and use the string obtained from the "Export Save Data" button.
+    <br><br>
+    Note that at the time of writing, there is no autosave/load function yet.
+    <!-- Credits -->
+    <h2 id="credits">Credits</h2>
+    ProjectProtonificator is created by a team of 4 people:
+    <ul>
+      <li><a href="https://mistertfy64.com">mistertfy64</a>: Project lead, Main programmer</li>
+      <li>Markleprimes: Secondary programmer, Art</li>
+      <li>Solbob: Art</li>
+      <li>Unknown: Testing, Quality Assurance</li>
+    </ul>
+    <!-- Technical Details -->
+    <h2 id="technical-details">Technical Details</h2>
+    <h3 id="technical-details__source-code">Source Code</h3>
+    The source code can be found at: <a href="https://github.com/mistertfy64/ProjectProtonificator">https://github.com/mistertfy64/ProjectProtonificator</a>.
+    <h3 id="technical-details__large-numbers">Large Numbers</h3>
+    (Vanilla) JavaScript can only handle numbers as large as 2^1024 ≈ 1.79*10^308. After the limit, the number is displayed as "Infinity", and will break calculations.
+    With many multiplicative multipliers (e.g., 309 multipliers of x10 would already exceed the limit), one can expect numbers to go further than the limit.
+    <br><br>
+    Because of that, the game uses a special JavaScript library called <a href="https://github.com/Patashu/break_eternity.js/">break_eternity.js</a>, which can "represent numbers as large as 10^^1e308".
+    Further technical implementation details of break_eternity.js can be found in its README.
+    <h3 id="technical-details__html-manipulation">HTML Manipulation</h3>
+    As this is a game with many "screens", code is needed to switch between the screens. The way this game used is to animate show and hide with durations of 0 milliseconds (i.e., instantly).
+    This can be done with traditional methods (e.g., document.getElementById("foo").style.display = "none";), but it can be seen that the code is too long.
+    <br><br>
+    Because of that, the game uses a <a href="https://jquery.com/">jQuery</a>, which "makes things like HTML [...] manipulation, [...] simpler [...]".
+    The primary reason why mistertfy64 chose to use jQuery is that "it makes the code shorter" (e.g., document.getElementById("foo") ≈ $("#foo") in jQuery).
+    <h3 id="technical-details__save-string">Save String</h3>
+    This game uses Base64 encoding/decoding to encode/decode save data. There are native functions that deal with Base64 in JavaScript.
+    <span style="opacity:0.075">This also means that one could make fake save data and then trick the game to think its real, which mistertfy64 has already done for testing purposes.</span>
+  </div>
+  <br><br>
+  <br><br>
+  <br><br>
+</body>
+
+</html>
