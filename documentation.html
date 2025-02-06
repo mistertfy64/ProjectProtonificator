@@ -46,13 +46,27 @@
     li ol>li:before {
       content: counters(item, ".") ". ";
     }
+
+    #content {
+      padding: 16px;
+      border: 4px solid #ffffff;
+      width: 50vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      #content {
+        width: 80vw;
+      }
+    }
   </style>
 </head>
 
 <body>
   <h1 style="text-align: center;">ProjectProtonificator</h1>
-  <div style="padding:16px;border:4px solid #ffffff;width:50vw;margin-left:auto;margin-right:auto;">
-    Documentation last updated February 5, 2025.
+  <div id="content">
+    Documentation last updated February 6, 2025.
     <br>
     <h2>Table of Contents</h2>
     <ol>
@@ -91,6 +105,8 @@
     <h2 id="about">About</h2>
     ProjectProtonificator is an incremental game where the main premise is to have as much money, electricity and particles as possible.
     Just like other incremental games, after generating currencies, the player can use currencies to purchase "upgrades" to increase the production of the same/similar currencies.
+    <br><br>
+    At its current state, the game can be played infinitely (up to a point) so the player can keep earning higher amounts of currency while waiting for the next update, due to the generate-buy-generate process being able to be repeated infinitely (up to a point).
     <br><br>
     The game can be played at <a href="https://content.mistertfy64.com/ProjectProtonificator">https://content.mistertfy64.com/ProjectProtonificator</a>.
     <!-- Basic Gameplay -->
